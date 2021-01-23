@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CursoController;
+use App\Http\Controllers\CultivoController;
+use App\Http\Controllers\EmpleadoController;
 use phpDocumentor\Reflection\Types\Resource_;
 
 /*
@@ -34,6 +35,10 @@ Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cur
 
 Route::resource('cultivos', CultivoController::class);
 
+<<<<<<< HEAD
 //Route::resource('cursos', CursoController::class);
+=======
+Route::resource('empleados', EmpleadoController::class);
+>>>>>>> af88a5e40842eeae2ce8b81d7bd80d9780b93cbb
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
