@@ -10,6 +10,9 @@ class CreateUsersTable extends Migration
      * Run the migrations.
      *
      * @return void
+     */ 
+    /**
+     * El método up al ejecutarlo añade las tablas nuevas que hemos creado.
      */
     public function up()
     {
