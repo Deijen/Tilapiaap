@@ -14,8 +14,13 @@ class CreateInformeTable extends Migration
     public function up()
     {
         Schema::create('informe', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id_informe');
+            $table->unsignedBigInteger('cultivo_id')->nullable(); //
+            $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo')->nullable(); //llave foranea de piscicultor
+            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
+
+
         });
     }
 

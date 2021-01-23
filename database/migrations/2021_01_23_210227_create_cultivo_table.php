@@ -14,8 +14,13 @@ class CreateCultivoTable extends Migration
     public function up()
     {
         Schema::create('cultivo', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id_cultivo');
+            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
+            $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
+            $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
+            $table->double('valor');
+
         });
     }
 

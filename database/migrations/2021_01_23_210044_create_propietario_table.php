@@ -13,7 +13,13 @@ class CreatePropietarioTable extends Migration
      */
     public function up()
     {
-        
+        Schema::create('propietario', function (Blueprint $table) {
+            $table->bigIncrements('id_propietario');
+            $table->String('Nombre');
+            $table->double('patrimonio');
+            $table->String('correo');
+            $table->timestamps();
+        });
     }
 
     /**
