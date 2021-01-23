@@ -9,7 +9,7 @@ class CultivoController extends Controller
 {
     public function index(){
 
-        $Cultivo = Cultivo::orderby('id', 'desc')->paginate();
+        $Cultivo = Cultivo::orderby('id_cultivo', 'desc')->paginate();
 
         return view("cultivos.index", compact('Cultivo'));
     }

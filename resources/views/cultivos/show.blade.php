@@ -1,23 +1,24 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Curso ' . $curso->name)
+@section('title', 'Cultivo ' . $Cultivo->id_cultivo)
 
 @section('content')
-<h1>Mostrando curso</h1>
-<p><strong>Nombre: </strong> {{$curso->name}}</p>
-<p><strong>Categoria: </strong> {{$curso->categoria}}</p>
-<p><strong>Descripcion: </strong> {{$curso->description}}</p>
+<h1>Mostrando Cultivo</h1>
+<p><strong>Nombre: </strong> {{$Cultivo->id_cultivo}}</p>
+<p><strong>Categoria: </strong> {{$Cultivo->piscicultor_id}}</p>
+<p><strong>Descripcion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
+<p><strong>Descripcion: </strong> {{$Cultivo->valor}}</p>
 <br>
-<a href="{{route('cursos.edit', $curso)}}">Editar curso</a>
+<a href="{{route('Cultivos.edit', $Cultivo)}}">Editar Cultivo</a>
 <br>
-<a href="{{route('cursos.index')}}">Volver a cursos</a>
+<a href="{{route('Cultivos.index')}}">Volver a Cultivos</a>
 
-<form action="{{route('cursos.destroy' , $curso)}}" method="POST">
+<form action="{{route('Cultivos.destroy' , $Cultivo)}}" method="POST">
 
     @csrf
     @method('delete')
 
-    <button type="submit" class="border-2 border-black">Eliminar Curso</button>
+    <button type="submit" class="border-2 border-black">Eliminar Cultivo</button>
 </form>
 @endsection
 
