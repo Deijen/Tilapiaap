@@ -54,17 +54,17 @@ class CreatePropietarioTable extends Migration
         /////////////////////////////////////7
         Schema::create('presupuesto', function (Blueprint $table) {
             $table->bigIncrements('id_presupuesto'); //llave primaria
-            $table->int('valor');
+            $table->double('valor');
         });
 
 
         ///////////////////////////////////////
         Schema::create('propietario', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('piscicultor_id'); //
-            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor'); //llave foranea de piscicultor
-            $table->unsignedBigInteger('presupuesto_id'); //
-            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuesto'); // LLave foranea de presupuesto
+            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
+            $table->unsignedBigInteger('presupuesto_id')->nullable(); //
+            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuesto')->nullable(); // LLave foranea de presupuesto
             $table->String('Nombre');
             $table->double('patrimonio');
             $table->String('correo');
@@ -75,18 +75,18 @@ class CreatePropietarioTable extends Migration
         ////////////////////////////////////////////
         Schema::create('cultivo', function (Blueprint $table) {
             $table->bigIncrements('id_cultivo');
-            $table->unsignedBigInteger('piscicultor_id'); //
-            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor'); //llave foranea de piscicultor
-            $table->unsignedBigInteger('tablaAlimentacion_id'); //
-            $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion');
+            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
+            $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
+            $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
             $table->double('valor');
         });  
 
         ///////////////////////////////////////
         Schema::create('venta', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('cultivo_id'); //
-            $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo'); //llave foranea de piscicultor
+            $table->unsignedBigInteger('cultivo_id')->nullable(); //
+            $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo')->nullable(); //llave foranea de piscicultor
            
         }); 
 
@@ -94,10 +94,10 @@ class CreatePropietarioTable extends Migration
 
         Schema::create('informe', function (Blueprint $table) {
             $table->bigIncrements('id_informe');
-            $table->unsignedBigInteger('cultivo_id'); //
-            $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo'); //llave foranea de piscicultor
-            $table->unsignedBigInteger('piscicultor_id'); //
-            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor'); //llave foranea de piscicultor
+            $table->unsignedBigInteger('cultivo_id')->nullable(); //
+            $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo')->nullable(); //llave foranea de piscicultor
+            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
         }); 
 
 
@@ -115,7 +115,11 @@ class CreatePropietarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('');
+        Schema::dropIfExists('informe');
+        Schema::dropIfExists('venta');
+        Schema::dropIfExists('cultivo');
+        Schema::dropIfExists('presupuesto');
+        Schema::dropIfExists('tablaAlimentacion');
         Schema::dropIfExists('propietario');
         Schema::dropIfExists('piscicultor');
     }
