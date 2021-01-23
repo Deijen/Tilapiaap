@@ -34,6 +34,16 @@ class CreatePropietarioTable extends Migration
          * 
          */
 
+
+        ///////////////////////////////////////
+        Schema::create('propietario', function (Blueprint $table) {
+            $table->bigIncrements('id_propietario');
+            $table->String('Nombre');
+            $table->double('patrimonio');
+            $table->String('correo');
+            $table->timestamps();
+        });
+         
         /////////////////////////////////////////////
         Schema::create('tablaAlimentacion', function (Blueprint $table) {
             $table->bigIncrements('id_tablaAlimentacion'); //llave primaria
@@ -44,6 +54,8 @@ class CreatePropietarioTable extends Migration
         //////////////////////////////////////////////////
         Schema::create('piscicultor', function (Blueprint $table) {
             $table->bigIncrements('id_piscicultor'); //llave primaria
+            $table->unsignedBigInteger('propietario_id')->nullable(); //
+            $table->foreign('propietario_id')->references('id_propietario')->on('propietario')->nullable(); //llave foranea de propietario
             $table->String('Nombre');
             $table->double('salario');
             $table->String('correo');
@@ -51,26 +63,14 @@ class CreatePropietarioTable extends Migration
         });
 
 
-        /////////////////////////////////////7
+        //////////////////////////////////////
         Schema::create('presupuesto', function (Blueprint $table) {
             $table->bigIncrements('id_presupuesto'); //llave primaria
+            $table->unsignedBigInteger('propietario_id')->nullable(); //
+            $table->foreign('propietario_id')->references('id_propietario')->on('propietario')->nullable(); //llave foranea de propietario
             $table->double('valor');
         });
 
-
-        ///////////////////////////////////////
-        Schema::create('propietario', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
-            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
-            $table->unsignedBigInteger('presupuesto_id')->nullable(); //
-            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuesto')->nullable(); // LLave foranea de presupuesto
-            $table->String('Nombre');
-            $table->double('patrimonio');
-            $table->String('correo');
-            $table->timestamps();
-
-        });
 
         ////////////////////////////////////////////
         Schema::create('cultivo', function (Blueprint $table) {
