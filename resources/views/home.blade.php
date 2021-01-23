@@ -24,5 +24,5 @@
     <br>
     <button class="flex justify-center border-2 border-black w-20">Log in</button>
 </div>
-<a href={{route('cursos.index')}}>Pagina Cursos</a>
+<a href={{route('cultivos.index')}}>Pagina Cursos</a>
 @endsection

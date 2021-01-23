@@ -32,8 +32,8 @@ Route::put('cursos/{curso}/', [CursoController::class, 'update'])->name('cursos.
 
 Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cursos.destroy'); */
 
-Route::resource('cursos', CursoController::class);
+Route::resource('cultivos', CultivoController::class);
 
-Route::resource('cursos', CursoController::class);
+//Route::resource('cursos', CursoController::class);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');

@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' : '' }}">home</a>
                 </li>
-                <li><a href="{{route('cursos.index')}}" class="{{request()->routeIs('cursos.*') ? 'active' : '' }}">cursos</a>
+                <li><a href="{{route('cultivos.index')}}" class="{{request()->routeIs('cultivos.*') ? 'active' : '' }}">cultivos</a>
                 </li>
                 <li><a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros') ? 'active' : '' }}">Nosotros</a>
                 </li>
