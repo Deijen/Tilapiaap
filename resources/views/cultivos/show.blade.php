@@ -8,11 +8,11 @@
 <p><strong>Categoria: </strong> {{$curso->categoria}}</p>
 <p><strong>Descripcion: </strong> {{$curso->description}}</p>
 <br>
-<a href="{{route('cursos.edit', $curso)}}">Editar curso</a>
+<a href="{{route('cultivo.edit', $curso)}}">Editar curso</a>
 <br>
-<a href="{{route('cursos.index')}}">Volver a cursos</a>
+<a href="{{route('cultivo.index')}}">Volver a cursos</a>
 
-<form action="{{route('cursos.destroy' , $curso)}}" method="POST">
+<form action="{{route('cultivo.destroy' , $curso)}}" method="POST">
 
     @csrf
     @method('delete')

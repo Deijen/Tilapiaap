@@ -13,6 +13,6 @@ class Cultivo extends Model
      * Le damos a entender a eloquent que el modelo Cultivo corresponde a la tabla create_cultivo, 
      * o en su defecto, cultivo
      */
-    protected $table = 'create_cultivo';
+    protected $table = 'cultivo';
 
 }
