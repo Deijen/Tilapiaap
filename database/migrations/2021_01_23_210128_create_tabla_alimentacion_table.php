@@ -27,6 +27,6 @@ class CreateTablaAlimentacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tabla_alimentacion');
+        Schema::dropIfExists('tablaAlimentacion');
     }
 }

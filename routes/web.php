@@ -34,4 +34,6 @@ Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cur
 
 Route::resource('cursos', CursoController::class);
 
+Route::resource('cursos', CursoController::class);
+
 Route::view('nosotros', 'nosotros')->name('nosotros');
