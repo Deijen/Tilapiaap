@@ -7,7 +7,7 @@
     <p class="flex justify-center font-serif text-7xl text-blue-400">PAGINA INICIAL</p>
 </div>
 <div class="container mx-10">
-    <h1>Log in</h1>
+    <h1></h1>
     <label>
         Usuario: 
         <br>

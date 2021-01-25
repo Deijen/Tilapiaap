@@ -22,7 +22,14 @@ class PiscicultorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            /**
+             * Tira error al ejecutar el seeder (debe ser por la llave foranea)
+             */
+            'id_piscicultor' =>$this->faker,
+            'propietario_id'=>$this->faker,
+            'nombre'=>$this->faker,
+            'salario'=>$this->faker,
+            'correo'=>$this->faker
         ];
     }
 }

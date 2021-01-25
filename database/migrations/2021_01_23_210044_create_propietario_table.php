@@ -17,7 +17,9 @@ class CreatePropietarioTable extends Migration
             $table->bigIncrements('id_propietario');
             $table->String('Nombre');
             $table->double('patrimonio');
-            $table->String('correo');
+            $table->String('correo')->unique();
+            $table->string('password'); 
+
             $table->timestamps();
         });
     }

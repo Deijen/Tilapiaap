@@ -38,3 +38,11 @@ Route::resource('cultivos', CultivoController::class);
 Route::resource('empleados', EmpleadoController::class);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
+
+
+////////////////
+/**
+ *Rutas para el login  
+ * NOTA: El login se hará manual 
+ */
+
