@@ -13,6 +13,9 @@ class CreatePiscicultorTable extends Migration
      */
     public function up()
     {
+        /**
+         * 
+         */
         Schema::create('piscicultor', function (Blueprint $table) {
             $table->bigIncrements('id_piscicultor'); //llave primaria
             $table->unsignedBigInteger('propietario_id')->nullable(); //

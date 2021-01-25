@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Piscicultor extends Model
 {
     use HasFactory;
+
+    /**
+     * Le damos a entender a eloquent que el modelo Cultivo corresponde a la tabla create_piscicultor, 
+     * o en su defecto, piscicultor
+     */
+    protected $table = 'piscicultor';
 }
