@@ -15,6 +15,10 @@ class Cultivo extends Model
      */
     protected $table = 'cultivo';  
 
+    protected $primaryKey = 'id_cultivo';
+
+    protected $fillable =[ 'tablaAlimentacion_id', 'piscicultor_id', 'valor'];
+
     //comentario perrón
 
 }

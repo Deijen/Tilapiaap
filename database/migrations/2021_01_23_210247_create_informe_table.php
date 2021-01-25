@@ -19,7 +19,7 @@ class CreateInformeTable extends Migration
             $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo')->nullable(); //llave foranea de piscicultor
             $table->unsignedBigInteger('piscicultor_id')->nullable(); //
             $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
-
+            $table->timestamps();
 
         });
     }

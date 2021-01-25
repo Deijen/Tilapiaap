@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>Mostrando Cultivo</h1>
-<p><strong>Nombre: </strong> {{$Cultivo->id_cultivo}}</p>
+<p><strong>ID: </strong> {{$Cultivo->id_cultivo}}</p>
 <p><strong>Piscicultor: </strong> {{$Cultivo->piscicultor_id}}</p>
 <p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
 <p><strong>Valor: </strong> {{$Cultivo->valor}}</p>

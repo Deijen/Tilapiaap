@@ -14,4 +14,6 @@ class Propietario extends Model
      * o en su defecto, propietario
      */
     protected $table = 'propietario';
+
+    protected $primaryKey = 'id_propietario';
 }

@@ -1,61 +1,57 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Cursos Create')
+@section('title', 'cultivos Create')
 
 @section('content')
-<h1>Pagina para crear cursos</h1>
+<h1>Pagina para crear cultivos</h1>
 
+    <form action="{{route('cultivos.store')}}" method="post"> 
 
-<div class="container">
-<form action="{{route('cursos.store')}}" method="POST"> 
-
-    @csrf
-
-    <label>
-        Nombre:
-        <br>
-        <input type="text" name="name" value="{{old('name')}}" class = "border-2 border-black" >
-    </label>
-
-    @error('name')
+        @csrf
+    
+        <label>
+            Piscicultor:
+            <br>
+            <input type="text" name="Piscicultor" value="{{old('Piscicultor')}}">
+        </label>
+    
+        @error('Piscicultor')
         <br>
         <small>*{{$message}}</small>
         <br>
-    @enderror
-
-    <br>
-    <label>
-        Descripcion:
+        @enderror
+    
         <br>
-        <textarea name="description" rows="5" class = "border-2 border-black">{{old('description')}} </textarea>
-    </label>
-
-    @error('description')
+        <label>
+            Tabla de Alimentacion:
+            <br>
+            <input type="text" name="tablaAlimentacion" value="{{old('tablaAlimentacion')}}">
+        </label>
+    
+        @error('tablaAlimentacion')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+    
+        <br>
+        <label>
+            Valor:
+            <br>
+            <input type="text" name="valor" value="{{old('valor')}}">
+        </label>
+    
+        @error('valor')
         <br>
         <small>*{{$message}}</small>
         <br>
-    @enderror
-
-    <br>
-    <label>
-        Categoria:
+        @enderror
+    
         <br>
-        <input type="text" name="categoria" value="{{old('categoria')}}" class = "border-2 border-black">
-    </label>
-
-    @error('categoria')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-    @enderror
-
-    <br>
-    <br>
-    <button type="submit" class = "border-2 border-black" >Enviar Formulario</button>
-
-</form>
-</div>
-<a href="{{route('cursos.index')}}">Volver a cursos</a>
-@endsection
+        <button type="submit">Enviar formulario</button>
+    
+    </form>
+    <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+    @endsection
 
 

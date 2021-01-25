@@ -1,37 +1,24 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Cursos edit')
+@section('title', 'Cultivos edit')
 
 @section('content')
-<h1>Pagina para editar cursos</h1>
+<h1>Pagina para editar Cultivos</h1>
 
 
 
-<form action="{{route('cursos.update', $curso)}}" method="post"> 
+<form action="{{route('cultivos.update', $Cultivo)}}" method="post"> 
 
     @csrf
     @method('put')
 
     <label>
-        Nombre:
+        Piscicultor:
         <br>
-        <input type="text" name="name" value="{{old('name', $curso->name)}}">
+        <input type="text" name="Piscicultor" value="{{old('description', $Cultivo->id_piscicultor)}}">
     </label>
 
-    @error('name')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-    @enderror
-
-    <br>
-    <label>
-        Descripcion:
-        <br>
-        <textarea name="description" rows="5">{{old('description', $curso->description)}}</textarea>
-    </label>
-
-    @error('description')
+    @error('Piscicultor')
     <br>
     <small>*{{$message}}</small>
     <br>
@@ -39,20 +26,33 @@
 
     <br>
     <label>
-        Categoria:
+        Tabla de Alimentacion:
         <br>
-        <input type="text" name="categoria" value="{{old('categoria', $curso->categoria)}}">
+        <input type="text" name="tablaAlimentacion" value="{{old('tablaAlimentacion', $Cultivo->categoria)}}">
     </label>
 
-    @error('categoria')
+    @error('tablaAlimentacion')
         <br>
         <small>*{{$message}}</small>
         <br>
     @enderror
 
     <br>
+    <label>
+        Valor:
+        <br>
+        <input type="text" name="valor" value="{{old('valor', $Cultivo->valor)}}">
+    </label>
+
+    @error('valor')
+    <br>
+    <small>*{{$message}}</small>
+    <br>
+    @enderror
+
+    <br>
     <button type="submit">Actualizar formulario</button>
 
 </form>
-<a href="{{route('cursos.index')}}">Volver a cursos</a>
+<a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
 @endsection

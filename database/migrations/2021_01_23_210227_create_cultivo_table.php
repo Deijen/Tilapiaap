@@ -20,7 +20,7 @@ class CreateCultivoTable extends Migration
             $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
             $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
             $table->double('valor');
-
+            $table->timestamps();
         });
     }
 

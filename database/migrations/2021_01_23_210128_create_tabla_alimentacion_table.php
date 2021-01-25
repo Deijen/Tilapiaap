@@ -16,6 +16,7 @@ class CreateTablaAlimentacionTable extends Migration
         Schema::create('tablaAlimentacion', function (Blueprint $table) {
             $table->bigIncrements('id_tablaAlimentacion'); //llave primaria
             $table->string('valores'); //Son más valores.
+            $table->timestamps();
             
         });
     }

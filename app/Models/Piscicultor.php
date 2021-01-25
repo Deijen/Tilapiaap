@@ -14,4 +14,6 @@ class Piscicultor extends Model
      * o en su defecto, piscicultor
      */
     protected $table = 'piscicultor';
+
+    protected $primaryKey = 'id_piscicultor';
 }
