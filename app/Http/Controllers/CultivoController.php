@@ -57,9 +57,9 @@ class CultivoController extends Controller
 
          $Cultivo = new Cultivo();
 
-        $Cultivo->name = $request->name;
-        $Cultivo->description = $request->description;
-        $Cultivo->categoria = $request->categoria;
+        $Cultivo->cultivo_id = $request->cultivo_id;
+        $Cultivo->piscicultor_id = $request->piscicultor_id;
+        $Cultivo->valores = $request->valores;
 
         $Cultivo->save(); */
 
