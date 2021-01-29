@@ -17,7 +17,7 @@ class CreateVentaTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('cultivo_id')->nullable(); //
             $table->foreign('cultivo_id')->references('id_cultivo')->on('cultivo')->nullable(); //llave foranea de piscicultor
-            
+            $table->timestamps();
         });
     }
 

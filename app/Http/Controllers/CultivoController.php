@@ -31,13 +31,7 @@ class CultivoController extends Controller
 
     public function update(Request $request,Cultivo $Cultivo){
 
-        $request->validate([
-
-            'name'=>'required',
-            'description' => 'required',
-            'categoria' => 'required'
-
-        ]);
+       
 
         /* $Cultivo->name = $request->name;
         $Cultivo->description = $request->description;
@@ -47,12 +41,12 @@ class CultivoController extends Controller
 
         $Cultivo->update($request->all());
 
-        return redirect()->route('Cultivos.show', $Cultivo);
+        return redirect()->route('cultivos.show', $Cultivo);
 
     }
 
     public function create(){
-        return view('Cultivos.create');
+        return view('cultivos.create');
     }
 
     public function store(Request $request){
@@ -67,15 +61,15 @@ class CultivoController extends Controller
 
          $Cultivo = new Cultivo();
 
-        $Cultivo->name = $request->name;
-        $Cultivo->description = $request->description;
-        $Cultivo->categoria = $request->categoria;
+        $Cultivo->cultivo_id = $request->cultivo_id;
+        $Cultivo->piscicultor_id = $request->piscicultor_id;
+        $Cultivo->valores = $request->valores;
 
         $Cultivo->save(); */
 
         $Cultivo = Cultivo::create($request->all());
 
-        return redirect()->route('Cultivos.show', $Cultivo);
+        return redirect()->route('cultivos.show', $Cultivo);
         
 
     }
@@ -85,7 +79,7 @@ class CultivoController extends Controller
 
         $Cultivo->delete();
 
-        return redirect()->route('Cultivos.index');
+        return redirect()->route('cultivos.index');
 
     }
 

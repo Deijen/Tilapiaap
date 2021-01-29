@@ -18,7 +18,7 @@ class CreatePresupuestoTable extends Migration
             $table->unsignedBigInteger('propietario_id')->nullable(); //
             $table->foreign('propietario_id')->references('id_propietario')->on('propietario')->nullable(); //llave foranea de propietario
             $table->double('valor');
-            
+            $table->timestamps();
         });
     }
 

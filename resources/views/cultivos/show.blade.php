@@ -4,16 +4,16 @@
 
 @section('content')
 <h1>Mostrando Cultivo</h1>
-<p><strong>Nombre: </strong> {{$Cultivo->id_cultivo}}</p>
-<p><strong>Categoria: </strong> {{$Cultivo->piscicultor_id}}</p>
-<p><strong>Descripcion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
-<p><strong>Descripcion: </strong> {{$Cultivo->valor}}</p>
+<p><strong>ID: </strong> {{$Cultivo->id_cultivo}}</p>
+<p><strong>Piscicultor: </strong> {{$Cultivo->piscicultor_id}}</p>
+<p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
+<p><strong>Valor: </strong> {{$Cultivo->valor}}</p>
 <br>
-<a href="{{route('Cultivos.edit', $Cultivo)}}">Editar Cultivo</a>
+<a href="{{route('cultivos.edit', $Cultivo)}}">Editar Cultivo</a>
 <br>
-<a href="{{route('Cultivos.index')}}">Volver a Cultivos</a>
+<a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
 
-<form action="{{route('Cultivos.destroy' , $Cultivo)}}" method="POST">
+<form action="{{route('cultivos.destroy' , $Cultivo)}}" method="POST">
 
     @csrf
     @method('delete')
