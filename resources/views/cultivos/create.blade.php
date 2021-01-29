@@ -3,11 +3,11 @@
 @section('title', 'Cursos Create')
 
 @section('content')
-<h1>Pagina para crear cursos</h1>
+<h1>Pagina para crear cultivos</h1>
 
 
 <div class="container">
-<form action="{{route('cursos.store')}}" method="POST"> 
+<form action="{{route('cultivos.store')}}" method="POST"> 
 
     @csrf
 
@@ -55,7 +55,7 @@
 
 </form>
 </div>
-<a href="{{route('cursos.index')}}">Volver a cursos</a>
+<a href="{{route('cultivos.index')}}">Volver a cursos</a>
 @endsection
 
 

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class CultivoController extends Controller
 {
     public function index(){
+        /**
+         * NOTA: Para pasar variables se hace por el método compact. 
+         * NOTA: las funciones que reciben métodos en estos controladores, corregirlos en el diagrama de clase
+         */
 
         $Cultivo = Cultivo::orderby('id_cultivo', 'desc')->paginate();
 
