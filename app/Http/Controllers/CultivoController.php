@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cultivo;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CultivoController extends Controller
 {
@@ -20,9 +21,15 @@ class CultivoController extends Controller
 
     public function show(Cultivo $Cultivo){
 
-        $piscicultores = Piscicultor::all();
+       // $piscicultores = Piscicultor::all();
 
-        return view('cultivos.show', compact('Cultivo', 'piscicultores'));
+        //$piscicultores = DB::select('select * from piscicultor where id_cultivo = $Cultivo = id_cultivo');
+
+        $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
+
+       
+
+        return view('cultivos.show', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
     }
 
     public function edit(Cultivo $Cultivo){

@@ -6,12 +6,11 @@
 <h1>Mostrando Cultivo</h1>
 <p><strong>ID_cultivo: </strong> {{$Cultivo->id_cultivo}}</p>
 <p><strong>Piscicultores: </strong> {{$Cultivo->piscicultor_id}}</p>
-<!--lista de piscicultores-->
-<!--La variable piscicultor no está definida. Debe ser por la ruta. Se está usando la ruta para cultivos-->
+
 @foreach ($piscicultores as $item)
    <strong> <a  href="{{route('cultivos.show', $item->Nombre)}}"><li>{{$item->Nombre}}</li></a> </strong> 
-   <!-- @endforeach -->
-<!---->
+@endforeach 
+
 <p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
 <p><strong>Valor: </strong> {{$Cultivo->valor}}</p>
 <br>
