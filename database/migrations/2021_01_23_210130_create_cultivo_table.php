@@ -15,8 +15,8 @@ class CreateCultivoTable extends Migration
     {
         Schema::create('cultivo', function (Blueprint $table) {
             $table->bigIncrements('id_cultivo');
-            $table->unsignedBigInteger('piscicultor_id')->nullable(); //
-            $table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
+            //$table->unsignedBigInteger('piscicultor_id')->nullable(); //
+            //$table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
             $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
             $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
             $table->double('valor');
@@ -34,3 +34,5 @@ class CreateCultivoTable extends Migration
         Schema::dropIfExists('cultivo');
     }
 }
+
+
