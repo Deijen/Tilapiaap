@@ -37,6 +37,8 @@ Route::resource('cultivos', CultivoController::class);
 
 Route::resource('empleados', EmpleadoController::class);
 
+Route::get('cultivos', CultivoController::class);
+
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
 
