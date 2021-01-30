@@ -20,7 +20,9 @@ class CultivoController extends Controller
 
     public function show(Cultivo $Cultivo){
 
-        return view('cultivos.show', compact('Cultivo'));
+        $piscicultores = Piscicultor::all();
+
+        return view('cultivos.show', compact('Cultivo', 'piscicultores'));
     }
 
     public function edit(Cultivo $Cultivo){
