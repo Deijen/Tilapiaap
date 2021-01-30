@@ -8,7 +8,7 @@
 <p><strong>Piscicultores: </strong> {{$Cultivo->piscicultor_id}}</p>
 
 @foreach ($piscicultores as $item)
-   <strong> <a  href="{{route('cultivos.show', $item->Nombre)}}"><li>{{$item->Nombre}}</li></a> </strong> 
+   <strong> <a href="{{route('empleados.show', $item->id_piscicultor)}}"><li>{{$item->Nombre}}</li></a> </strong> 
 @endforeach 
 
 <p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>

@@ -3,19 +3,17 @@
 @section('title', 'Piscicultores ' . $Piscicultor->id_piscicultor)  
 
 @section('content')
-<h1>Mostrando Empleados</h1>
-<p><strong>ID_empleados: </strong> {{$Piscicultor->id_piscicultor}}</p>
+<h1>Mostrando Empleado</h1>
+<p><strong>ID_empleado: </strong> {{$Piscicultor->id_piscicultor}}</p>
 <p><strong>Nombre: </strong> {{$Piscicultor->Nombre}}</p>
 <p><strong>Salario: </strong> {{$Piscicultor->salario}}</p>
 <p><strong>Correo: </strong> {{$Piscicultor->correo}}</p>
 
-
-
-<a href="{{route('cultivos.edit', $Cultivo)}}">Editar Cultivo</a>
+<a href="{{route('empleados.edit', $Piscicultor)}}">Editar Cultivo</a>
 <br>
 <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
 
-<form action="{{route('cultivos.destroy' , $Cultivo)}}" method="POST">
+<form action="{{route('empleados.destroy' , $Piscicultor)}}" method="POST">
 
     @csrf
     @method('delete')

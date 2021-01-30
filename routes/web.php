@@ -35,9 +35,7 @@ Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cur
 
 Route::resource('cultivos', CultivoController::class);
 
-Route::resource('empleados', EmpleadoController::class);
-
-Route::get('cultivos', CultivoController::class);
+Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor']);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
