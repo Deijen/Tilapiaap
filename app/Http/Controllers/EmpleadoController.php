@@ -9,19 +9,19 @@ class EmpleadoController extends Controller
 {
     public function index(){
 
-        $Piscicultor = Piscicultor::orderby('id', 'desc')->paginate();
+        $Piscicultor = Piscicultor::orderby('id_piscicultor', 'desc')->paginate();
 
-        return view("piscicultor.index", compact('piscicultor'));
+        return view("piscicultor.index", compact('Piscicultor'));
     }
 
-    public function show(Piscicultor $piscicultor){
+    public function show(Piscicultor $Piscicultor){
 
-        return view('Piscicultors.show', compact('Piscicultor'));
+        return view('piscicultor.show', compact('Piscicultor'));
     }
 
-    public function edit(Piscicultor $piscicultor){
+    public function edit(Piscicultor $Piscicultor){
 
-        return view('Piscicultors.edit', compact('Piscicultor'));
+        return view('piscicultor.edit', compact('Piscicultor'));
 
     }
 
@@ -43,12 +43,12 @@ class EmpleadoController extends Controller
 
         $Piscicultor->update($request->all());
 
-        return redirect()->route('Piscicultors.show', $Piscicultor);
+        return redirect()->route('piscicultor.show', $Piscicultor);
 
     }
 
     public function create(){
-        return view('Piscicultors.create');
+        return view('piscicultor.create');
     }
 
     public function store(Request $request){
@@ -71,7 +71,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor = Piscicultor::create($request->all());
 
-        return redirect()->route('Piscicultors.show', $Piscicultor);
+        return redirect()->route('piscicultor.show', $Piscicultor);
         
 
     }
@@ -81,7 +81,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor->delete();
 
-        return redirect()->route('Piscicultors.index');
+        return redirect()->route('piscicultor.index');
 
     }
 

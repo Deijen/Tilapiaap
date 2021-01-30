@@ -23,6 +23,7 @@
     
         <br>
         <label>
+            <!--La tabla de alimentación debe ser un link. Quitar el input. No va en la creacion de cultivos del propietario-->
             Tabla de Alimentacion:
             <br>
             <input type="text" name="tablaAlimentacion" value="{{old('tablaAlimentacion')}}">

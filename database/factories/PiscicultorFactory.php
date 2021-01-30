@@ -26,7 +26,7 @@ class PiscicultorFactory extends Factory
              * Tira error al ejecutar el seeder (debe ser por la llave foranea)
              */
             'id_piscicultor' =>$this->faker,
-            'propietario_id'=>$this->faker,
+           // 'propietario_id'=>$this->faker,
             'nombre'=>$this->faker,
             'salario'=>$this->faker,
             'correo'=>$this->faker

@@ -1,11 +1,17 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Cultivo ' . $Cultivo->id_cultivo)
+@section('title', 'Cultivo ' . $Cultivo->id_cultivo)  
 
 @section('content')
 <h1>Mostrando Cultivo</h1>
-<p><strong>ID: </strong> {{$Cultivo->id_cultivo}}</p>
-<p><strong>Piscicultor: </strong> {{$Cultivo->piscicultor_id}}</p>
+<p><strong>ID_cultivo: </strong> {{$Cultivo->id_cultivo}}</p>
+<p><strong>Piscicultores: </strong> {{$Cultivo->piscicultor_id}}</p>
+<!--lista de piscicultores-->
+<!--La variable piscicultor no está definida. Debe ser por la ruta. Se está usando la ruta para cultivos-->
+@foreach ($Cultivo as $item)
+   <strong> <a  href="{{route('cultivo.mostrarEmpleados', $item->Nombre)}}"><li>{{$item->Nombre}}</li></a> </strong> 
+   <!-- @endforeach -->
+<!---->
 <p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
 <p><strong>Valor: </strong> {{$Cultivo->valor}}</p>
 <br>

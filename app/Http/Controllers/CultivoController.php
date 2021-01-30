@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cultivo;
-
+use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 
 class CultivoController extends Controller
@@ -80,6 +80,12 @@ class CultivoController extends Controller
         $Cultivo->delete();
 
         return redirect()->route('cultivos.index');
+
+    } 
+
+    public function mostrarEmpleados(Piscicultor $Piscicultor){
+
+        return view('piscicultor.show', compact('Piscicultor'));
 
     }
 
