@@ -20,10 +20,10 @@
     <label>
         Nombre del Piscicultor a editar:
         <br>
-        <input type="text" name="Piscicultor" value="{{old('description', $Piscicultor->Nombre)}}">
+        <input type="text" name="Nombre" value="{{old('description', $Piscicultor->Nombre)}}">
     </label>
 
-    @error('Piscicultor')
+    @error('Nombre')
     <br>
     <small>*{{$message}}</small>
     <br>

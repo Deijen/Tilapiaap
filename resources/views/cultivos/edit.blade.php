@@ -32,11 +32,7 @@
     <br>
     
 
-    @error('tablaAlimentacion')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-    @enderror
+    
 
     <br>
     <label>
