@@ -22,7 +22,9 @@ class Cultivo extends Model
      * Hay que añadir el fillable a futuro para permitir asignación masiva
      * 
      */
-    //protected $fillable =[ 'tablaAlimentacion_id', 'piscicultor_id', 'valor'];
+    protected $fillable =[
+        'id_cultivo',
+         'valor'];
 
     //comentario perrón
 
