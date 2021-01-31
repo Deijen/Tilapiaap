@@ -5,6 +5,8 @@
 @section('content')
 <h1>Interfaz propietario</h1>
 <a href={{route('cultivos.create')}}>Crear cultivo</a>
+<br>
+<a href="{{route('empleados.create')}}"> Crear piscicultor</a>
 <ul>
     <h1> Listado de cultivos</h1>
     @foreach ($Cultivo as $item)

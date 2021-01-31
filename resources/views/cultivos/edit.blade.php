@@ -4,16 +4,21 @@
 
 @section('content')
 <h1>Pagina para editar Cultivos</h1>
+<br>
+
+<!--Se indica que cultivo se va a editar-->
+<h1> <strong> Id del cultivo a editar: {{$Cultivo->id_cultivo}}</strong> </h1>
+<br>
 
 
-
+<!--cultivo.update ,manda los datos del formulario-->
 <form action="{{route('cultivos.update', $Cultivo)}}" method="post"> 
 
     @csrf
     @method('put')
 
     <label>
-        Piscicultor:
+        Piscicultores disponibles:
         <br>
         <input type="text" name="Piscicultor" value="{{old('description', $Cultivo->id_piscicultor)}}">
     </label>
@@ -25,11 +30,7 @@
     @enderror
 
     <br>
-    <label>
-        Tabla de Alimentacion:
-        <br>
-        <input type="text" name="tablaAlimentacion" value="{{old('tablaAlimentacion', $Cultivo->categoria)}}">
-    </label>
+    
 
     @error('tablaAlimentacion')
         <br>
@@ -39,7 +40,7 @@
 
     <br>
     <label>
-        Valor:
+        Valor :
         <br>
         <input type="text" name="valor" value="{{old('valor', $Cultivo->valor)}}">
     </label>

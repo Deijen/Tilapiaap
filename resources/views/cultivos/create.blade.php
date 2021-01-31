@@ -9,17 +9,7 @@
 
         @csrf
     
-        <label>
-            Piscicultor:
-            <br>
-            <input type="text" name="Piscicultor" value="{{old('Piscicultor')}}">
-        </label>
-    
-        @error('Piscicultor')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-        @enderror
+        
     
         <br>
         <label>
@@ -37,7 +27,7 @@
     
         <br>
         <label>
-            Valor:
+            Valores (intensidad, numero de tilapias):
             <br>
             <input type="text" name="valor" value="{{old('valor')}}">
         </label>

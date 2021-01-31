@@ -15,5 +15,13 @@ class Piscicultor extends Model
      */
     protected $table = 'piscicultor';
 
-    protected $primaryKey = 'id_piscicultor';
+    protected $primaryKey = 'id_piscicultor'; 
+
+    protected $fillable = [
+        'id_piscicultor',
+        'Nombre',
+        'salario',
+        'correo'
+       
+    ];
 }

@@ -17,7 +17,12 @@ class Cultivo extends Model
 
     protected $primaryKey = 'id_cultivo';
 
-    protected $fillable =[ 'tablaAlimentacion_id', 'piscicultor_id', 'valor'];
+
+    /**
+     * Hay que añadir el fillable a futuro para permitir asignación masiva
+     * 
+     */
+    //protected $fillable =[ 'tablaAlimentacion_id', 'piscicultor_id', 'valor'];
 
     //comentario perrón
 

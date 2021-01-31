@@ -10,8 +10,10 @@
 @foreach ($piscicultores as $item)
    <strong> <a href="{{route('empleados.show', $item->id_piscicultor)}}"><li>{{$item->Nombre}}</li></a> </strong> 
 @endforeach 
+<h1>----------------------------------</h1>
+<br>
 
-<p><strong>Tabla de Alimentacion: </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
+<p><strong><a href="">Tabla de alimentación (link que llevará a la tabla de alimentacion)</a> </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
 <p><strong>Valor: </strong> {{$Cultivo->valor}}</p>
 <br>
 <a href="{{route('cultivos.edit', $Cultivo)}}">Editar Cultivo</a>

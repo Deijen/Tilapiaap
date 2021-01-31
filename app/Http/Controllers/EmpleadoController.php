@@ -43,11 +43,13 @@ class EmpleadoController extends Controller
 
         $Piscicultor->update($request->all());
 
-        return redirect()->route('piscicultor.show', $Piscicultor);
+        //return redirect()->route('piscicultor.show', $Piscicultor);
+        return redirect()->route('empleados.show', $Piscicultor); //<--- Se debe usar la ruta
 
     }
 
     public function create(){
+        //return view('piscicultor.create');
         return view('piscicultor.create');
     }
 
@@ -71,7 +73,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor = Piscicultor::create($request->all());
 
-        return redirect()->route('piscicultor.show', $Piscicultor);
+        return redirect()->route('empleados.show', $Piscicultor); 
         
 
     }

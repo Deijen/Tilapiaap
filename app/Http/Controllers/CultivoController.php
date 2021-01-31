@@ -58,6 +58,12 @@ class CultivoController extends Controller
         return view('cultivos.create');
     }
 
+
+
+    /**
+     * La función store funciona como un insert de sql
+     * 
+     */
     public function store(Request $request){
 
         /* $request->validate([
