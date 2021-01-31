@@ -27,6 +27,7 @@ class EmpleadoController extends Controller
 
     public function update(Request $request,Piscicultor $Piscicultor){
 
+   /*
         $request->validate([
 
             'name'=>'required',
@@ -34,6 +35,8 @@ class EmpleadoController extends Controller
             'categoria' => 'required'
 
         ]);
+         */  
+
 
         /* $Piscicultor->name = $request->name;
         $Piscicultor->description = $request->description;

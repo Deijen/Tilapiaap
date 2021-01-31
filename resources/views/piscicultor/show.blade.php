@@ -9,7 +9,7 @@
 <p><strong>Salario: </strong> {{$Piscicultor->salario}}</p>
 <p><strong>Correo: </strong> {{$Piscicultor->correo}}</p>
 
-<a href="{{route('empleados.edit', $Piscicultor)}}">Editar Cultivo</a>
+<a href="{{route('empleados.edit', $Piscicultor)}}">Editar empleado</a>
 <br>
 <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
 

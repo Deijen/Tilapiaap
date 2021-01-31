@@ -22,6 +22,11 @@ class Cultivo extends Model
      * Hay que añadir el fillable a futuro para permitir asignación masiva
      * 
      */
+
+     /**
+      * Valores de cultivo : numero de tilapias (int), intensidad del cultivo(int)
+      * costos de mantenimiento(double), parametros (crear otra tabla), cantidad de alimento (double)
+      */
     protected $fillable =[
         'id_cultivo',
          'valor'];
