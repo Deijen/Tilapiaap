@@ -112,16 +112,32 @@ class EmpleadoController extends Controller
 
     /**
      * Función para asignar un piscicultor
+     * Debe recibir un piscicultor y un cultivo
      */
-    public function asignarPiscicultor(Cultivo $cultivo, Piscicultor $pisicicultor){
+    public function asignarPiscicultor(Piscicultor $id_piscicultor, Cultivo $id_cultivo){
+
 
         //$cultivoid = DB::table('cultivo')->select('id_cultivo')->get();
         //$Piscicultor = DB::select('')->
-        Piscicultor::where('id_piscicultor', '=', $pisicicultor->id_piscicultor)->update(['cultivo_id' => $cultivo->id_cultivo]);
+        //Piscicultor::where('id_piscicultor', $pisicicultor->id_piscicultor)->update(['cultivo_id' => $cultivo->id_cultivo]);
         //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
-        return $cultivo;
-        return redirect()->route('cultivos.show', $cultivo);
+        //return $cultivo;
+      //  return redirect()->route('cultivos.show', $cultivo);
+      ////
 
+
+        //$Piscicultor = Piscicultor::find($id_piscicultor);
+       // return $Piscicultor;
+        ////
+        //
+        //$Cultivo = Cultivo::find($id_cultivo);
+        //return $Cultivo;
+        //
+
+        $id_piscicultor->cultivo_id = $id_cultivo->id_cultivo;
+        //return $id_piscicultor;
+        $id_piscicultor->save();
+        return redirect()->route('cultivos.show', $id_cultivo); 
 
     }
 

@@ -40,7 +40,10 @@ Route::resource('empleados', EmpleadoController::class)->parameters(['empleados'
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
 ////////////////
-Route::get('asignar/{cultivo}/{piscicultor}', [EmpleadoController::class, 'asignarPiscicultor'])->name('asignarEmpleado');
+/**
+ * Ruta para asignar piscicultores
+ */
+Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController::class, 'asignarPiscicultor'])->name('asignarEmpleado');
 
 ////////////////
 /**
