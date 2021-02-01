@@ -94,6 +94,9 @@ class CultivoController extends Controller
 
     public function destroy(Cultivo $Cultivo){
 
+        //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
+        $Piscicultor = Piscicultor::where('cultivo_id', $Cultivo->id_cultivo)->update(['cultivo_id' => NULL]);
+
         $Cultivo->delete();
 
         return redirect()->route('cultivos.index');
@@ -103,7 +106,7 @@ class CultivoController extends Controller
     public function mostrarEmpleadosDisponibles(Piscicultor $Piscicultor){
 
         //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
-        $Piscicultor = DB::select('select * from piscicultor where cultivo_id = NULL');
+        
 
         foreach ($Piscicultor as $item) {
             echo $item->Nombre;

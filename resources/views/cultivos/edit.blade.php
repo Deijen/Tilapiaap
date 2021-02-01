@@ -21,7 +21,7 @@
         Piscicultores disponibles para asignar:
         <br>
         @foreach ($piscicultores as $item)
-            <strong><a href=""> <li>{{$item->Nombre}}</li></a></strong>
+            <strong><a href=""><li>{{$item->Nombre}}</li></a></strong>
         @endforeach
         <br>
        
