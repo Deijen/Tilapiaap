@@ -94,8 +94,7 @@ class CultivoController extends Controller
 
     public function destroy(Cultivo $Cultivo){
 
-        //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
-        $Piscicultor = Piscicultor::where('cultivo_id', $Cultivo->id_cultivo)->update(['cultivo_id' => NULL]);
+        Piscicultor::where('cultivo_id', $Cultivo->id_cultivo)->update(['cultivo_id' => NULL]);
 
         $Cultivo->delete();
 
