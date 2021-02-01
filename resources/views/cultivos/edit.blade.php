@@ -20,17 +20,8 @@
     <label>
        
         <br>
-    <table>
-        <tr> 
-            <td> Piscicultores disponibles para asignar:</td>
-           
-        </tr>
-        
-        <tr>
-        @foreach ($piscicultores as $piscicultor)
-        <td> <li>{{$piscicultor->Nombre}}</li>  </td>
-        <td> <strong> <a href="{{route('asignarEmpleado', [$Cultivo->id_cultivo, $piscicultor->id_piscicultor])}}"> asignar al cultivo</a> </strong></td>
-        </tr>
+        @foreach ($piscicultores as $item)
+            <strong><a href=""><li>{{$item->Nombre}}</li></a></strong>
         @endforeach
     
         <br>
