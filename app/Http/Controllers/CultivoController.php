@@ -100,7 +100,9 @@ class CultivoController extends Controller
 
     } 
 
-    public function mostrarEmpleadosDisponibles(Piscicultor $Piscicultor){
+   
+   /*
+    public function mostrarEmpleadosDisponibles(Cultivo $cultivoid){
 
         //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
         $Piscicultor = DB::select('select * from piscicultor where cultivo_id = NULL');
@@ -108,6 +110,8 @@ class CultivoController extends Controller
         foreach ($Piscicultor as $item) {
             echo $item->Nombre;
         }
-    }
+    } 
+    //
+    */
 
 }

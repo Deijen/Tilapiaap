@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use App\Models\Propietario;
+use App\Models\Cultivo;
 use Illuminate\Support\Facades\DB;
 
 class EmpleadoController extends Controller
@@ -106,6 +107,21 @@ class EmpleadoController extends Controller
         $Piscicultor->delete();
 
         return redirect()->route('piscicultor.index');
+
+    }
+
+    /**
+     * Función para asignar un piscicultor
+     */
+    public function asignarPiscicultor(Cultivo $cultivo, Piscicultor $pisicicultor){
+
+        //$cultivoid = DB::table('cultivo')->select('id_cultivo')->get();
+        //$Piscicultor = DB::select('')->
+        Piscicultor::where('id_piscicultor', '=', $pisicicultor->id_piscicultor)->update(['cultivo_id' => $cultivo->id_cultivo]);
+        //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
+        return $cultivo;
+        return redirect()->route('cultivos.show', $cultivo);
+
 
     }
 
