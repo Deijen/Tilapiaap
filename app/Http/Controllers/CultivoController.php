@@ -34,7 +34,9 @@ class CultivoController extends Controller
 
     public function edit(Cultivo $Cultivo){
 
-        return view('cultivos.edit', compact('Cultivo'));
+        $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
+
+        return view('cultivos.edit', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
 
     }
 
