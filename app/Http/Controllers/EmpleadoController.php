@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
+use App\Models\Propietario;
+use Illuminate\Support\Facades\DB;
 
 class EmpleadoController extends Controller
 {
@@ -44,9 +46,14 @@ class EmpleadoController extends Controller
 
         $Piscicultor->save(); */
 
-        $Piscicultor->update($request->all());
 
+        
+        
+        
         //return redirect()->route('piscicultor.show', $Piscicultor);
+
+      //  $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
+        $Piscicultor->update($request->all());
         return redirect()->route('empleados.show', $Piscicultor); //<--- Se debe usar la ruta
 
     }
@@ -74,8 +81,20 @@ class EmpleadoController extends Controller
 
         $Piscicultor->save(); */
 
-        $Piscicultor = Piscicultor::create($request->all());
 
+            
+    // ¿Como asignar la id del propietario cuando se crea un piscicultor? 
+       // $Propietario = new Propietario();
+
+       
+
+        
+            
+
+
+
+        $Piscicultor = Piscicultor::create($request->all());
+        //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
         return redirect()->route('empleados.show', $Piscicultor); 
         
 

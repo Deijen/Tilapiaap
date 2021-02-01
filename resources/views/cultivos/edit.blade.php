@@ -18,9 +18,11 @@
     @method('put')
 
     <label>
-        Piscicultores disponibles:
+        Piscicultores disponibles para asignar:
         <br>
-        <input type="text" name="Piscicultor" value="{{old('description', $Cultivo->id_piscicultor)}}">
+        <!--{route('cultivos.mostrarEmpleadosDisponibles')}}-->
+        <br>
+       
     </label>
 
     @error('Piscicultor')
