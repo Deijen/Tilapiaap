@@ -34,7 +34,7 @@
         <label>
            Nombre del piscicultor: 
            <br>
-           <input type="text" name='Nombre' value="{{old('nombre')}}" >
+           <input type="text" name='Nombre' value="{{old('Nombre')}}" >
         </label>
     
         @error('Nombre')
@@ -66,7 +66,7 @@
             <br>
             <input type="text" name="correo" value="{{old('correo')}}">
         </label>
-        @error('salario')
+        @error('correo')
         <br>
         <small>*{{$message}}</small>
         <br>

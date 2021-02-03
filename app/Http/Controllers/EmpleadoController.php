@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEmpleado;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use App\Models\Propietario;
@@ -28,7 +29,7 @@ class EmpleadoController extends Controller
 
     }
 
-    public function update(Request $request,Piscicultor $Piscicultor){
+    public function update(StoreEmpleado $request,Piscicultor $Piscicultor){
 
    /*
         $request->validate([
@@ -64,7 +65,7 @@ class EmpleadoController extends Controller
         return view('piscicultor.create');
     }
 
-    public function store(Request $request){
+    public function store(StoreEmpleado $request){
 
         /* $request->validate([
 
