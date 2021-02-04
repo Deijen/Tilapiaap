@@ -92,10 +92,12 @@ class EmpleadoController extends Controller
 
         
             
-
+        $idPropietario = new Propietario();
 
 
         $Piscicultor = Piscicultor::create($request->all());
+        $Piscicultor->propietario_id = $idPropietario->id_propietario;
+        $Piscicultor->save();
         //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
         return redirect()->route('empleados.show', $Piscicultor); 
         
@@ -141,5 +143,21 @@ class EmpleadoController extends Controller
         return redirect()->route('cultivos.show', $id_cultivo); 
 
     }
+
+    public function crearPiscicultor(StoreEmpleado $request, Propietario $Propietario){
+         
+       
+
+        
+    
+        //$Propietario = new Propietario();
+       $Piscicultor = Piscicultor::create($request->all());
+       $Piscicultor->propietario_id = $Propietario->id_propietario;
+       $Piscicultor->save();
+       //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
+       return redirect()->route('asignarEmpleado', $Propietario); 
+       //return view('piscicultor.show', compact('Propietario'));
+    }
+
 
 }

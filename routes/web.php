@@ -47,6 +47,13 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
 
 ////////////////
 /**
+ * Ruta para crear piscicultores y asignarle la id del propietario
+ */
+
+ Route::post('idPropietario/{Propietario}', [EmpleadoController::class, 'crearPiscicultor'])->name('crearEmpleado');
+///////////////////
+
+/**
  *Rutas para el login  
  * NOTA: El login se hará manual 
  */
