@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'propietarios',
         ],
 
         'api' => [
@@ -49,7 +49,7 @@ return [
 
         'propietario' =>[
             'driver' => 'session',
-            'provider' => 'propietario',
+            'provider' => 'propietarios',
         ]
     ],
 
