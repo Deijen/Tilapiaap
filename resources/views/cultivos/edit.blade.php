@@ -15,7 +15,8 @@
 <form action="{{route('cultivos.update', $Cultivo)}}" method="post"> 
 
     @csrf
-    @method('post')
+    @method('put')
+    
 
     <label>
        
