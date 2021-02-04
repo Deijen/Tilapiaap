@@ -86,18 +86,22 @@ class EmpleadoController extends Controller
 
             
     // ¿Como asignar la id del propietario cuando se crea un piscicultor? 
-       // $Propietario = new Propietario();
+     //$idPropietario = new Propietario();
 
        
 
         
             
-        $idPropietario = new Propietario();
+        $idPropietario = DB::table('propietario')->select('id_propietario')->get();
 
-
+        
         $Piscicultor = Piscicultor::create($request->all());
-        $Piscicultor->propietario_id = $idPropietario->id_propietario;
-        $Piscicultor->save();
+        //$Piscicultor->propietario_id = $idPropietario;
+
+        
+
+        $Piscicultor = DB::table('piscicultor')->where('propietario_id', null)->update(['propietario_id' => 1]);
+        //$Piscicultor->save();
         //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
         return redirect()->route('empleados.show', $Piscicultor); 
         

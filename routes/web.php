@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CultivoController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\LoginController;
 use phpDocumentor\Reflection\Types\Resource_;
 
 /*
@@ -17,7 +18,9 @@ use phpDocumentor\Reflection\Types\Resource_;
 |
 */
 
+
 Route::get('/', HomeController::class)->name('home'); 
+Route::post('login', [LoginController::class, 'authenticate'])->name('inicio');
 
 /* Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 
@@ -58,3 +61,4 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
  * NOTA: El login se hará manual 
  */
 
+ 
