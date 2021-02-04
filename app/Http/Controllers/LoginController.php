@@ -13,7 +13,7 @@ class LoginController extends Controller
     {
         $credentials = $request->only('correo', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('propietario')->attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('cultivos.index');

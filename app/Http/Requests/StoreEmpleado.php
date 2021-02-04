@@ -34,8 +34,8 @@ class StoreEmpleado extends FormRequest
     public function messages()
     {
         return[
-            'valor.required' => 'Campo Requerido',
-            'valor.integer' => 'Valor ingresado no numerico'
+            'correo.email' => 'Direccion de correo no valida.',
+            'salario.integer' => 'Valor ingresado no numerico'
         ];
     }
 }
