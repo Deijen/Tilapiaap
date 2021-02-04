@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreCultivo;
+use App\Http\Requests\StoreCurso;
 use App\Models\Cultivo;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
@@ -40,7 +43,7 @@ class CultivoController extends Controller
 
     }
 
-    public function update(Request $request,Cultivo $Cultivo){
+    public function update(StoreCultivo $request,Cultivo $Cultivo){
 
        
 
@@ -66,7 +69,7 @@ class CultivoController extends Controller
      * La función store funciona como un insert de sql
      * 
      */
-    public function store(Request $request){
+    public function store(StoreCultivo $request){
 
         /* $request->validate([
 

@@ -16,7 +16,6 @@
 
     @csrf
     @method('put')
-    
 
     <label>
        
