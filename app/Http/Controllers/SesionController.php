@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Propietario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class LoginController extends Controller
+class SesionController extends Controller
 {
-    public function authenticate(Request $request)
+    public function iniciarLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
 

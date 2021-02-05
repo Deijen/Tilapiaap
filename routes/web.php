@@ -21,6 +21,9 @@ use phpDocumentor\Reflection\Types\Resource_;
 
 Route::get('/', HomeController::class)->name('home'); 
 
+//Route::get('/', [SesionController::class, 'iniciarLogin'])->name('inicioSesion');
+
+
 //Route::post('login', [LoginController::class, 'authenticate'])->name('inicio');
 
 /* Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
@@ -62,4 +65,5 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
  * NOTA: El login se hará manual 
  */
 
+ 
  

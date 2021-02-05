@@ -6,7 +6,7 @@
 <div>
     <p class="flex justify-center font-serif text-7xl text-blue-400">PAGINA INICIAL</p>
 </div>
-<form action="" method="">
+<form action="" method="get">
     @csrf
 
     <div class="container mx-10">
@@ -33,5 +33,8 @@
 </form>
 
 
-<a href={{route('cultivos.index')}}>Pagina Cursos (cultivos.index - borrar) </a>
+<a href={{route('cultivos.index')}}>interfaz Propietario (cultivos.index - borrar) </a>
+<br>
+<a href="">interfaz Piscicultor </a>
+
 @endsection

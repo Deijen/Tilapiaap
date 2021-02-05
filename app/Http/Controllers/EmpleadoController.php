@@ -29,32 +29,15 @@ class EmpleadoController extends Controller
 
     }
 
-    public function update(StoreEmpleado $request,Piscicultor $Piscicultor){
+    public function update(Request $request,Piscicultor $Piscicultor){
 
-   /*
         $request->validate([
-
-            'name'=>'required',
-            'description' => 'required',
-            'categoria' => 'required'
-
+            'Nombre' => 'required',
         ]);
-         */  
-
-
-        /* $Piscicultor->name = $request->name;
-        $Piscicultor->description = $request->description;
-        $Piscicultor->categoria = $request->categoria;
-
-        $Piscicultor->save(); */
-
-
         
         
-        
-        //return redirect()->route('piscicultor.show', $Piscicultor);
 
-      //  $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
+     
         $Piscicultor->update($request->all());
         return redirect()->route('empleados.show', $Piscicultor); //<--- Se debe usar la ruta
 
@@ -83,26 +66,14 @@ class EmpleadoController extends Controller
 
         $Piscicultor->save(); */
 
-
-            
-    // ¿Como asignar la id del propietario cuando se crea un piscicultor? 
-     //$idPropietario = new Propietario();
-
+        
+        $Piscicultor = Piscicultor::create($request->all());
        
 
         
-            
-        $idPropietario = DB::table('propietario')->select('id_propietario')->get();
 
+       // $Piscicultor = DB::table('piscicultor')->where('propietario_id', null)->update(['propietario_id' => 1]);
         
-        $Piscicultor = Piscicultor::create($request->all());
-        //$Piscicultor->propietario_id = $idPropietario;
-
-        
-
-        $Piscicultor = DB::table('piscicultor')->where('propietario_id', null)->update(['propietario_id' => 1]);
-        //$Piscicultor->save();
-        //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
         return redirect()->route('empleados.show', $Piscicultor); 
         
 
@@ -124,23 +95,6 @@ class EmpleadoController extends Controller
     public function asignarPiscicultor(Piscicultor $id_piscicultor, Cultivo $id_cultivo){
 
 
-        //$cultivoid = DB::table('cultivo')->select('id_cultivo')->get();
-        //$Piscicultor = DB::select('')->
-        //Piscicultor::where('id_piscicultor', $pisicicultor->id_piscicultor)->update(['cultivo_id' => $cultivo->id_cultivo]);
-        //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
-        //return $cultivo;
-      //  return redirect()->route('cultivos.show', $cultivo);
-      ////
-
-
-        //$Piscicultor = Piscicultor::find($id_piscicultor);
-       // return $Piscicultor;
-        ////
-        //
-        //$Cultivo = Cultivo::find($id_cultivo);
-        //return $Cultivo;
-        //
-
         $id_piscicultor->cultivo_id = $id_cultivo->id_cultivo;
         //return $id_piscicultor;
         $id_piscicultor->save();
@@ -148,20 +102,7 @@ class EmpleadoController extends Controller
 
     }
 
-    public function crearPiscicultor(StoreEmpleado $request, Propietario $Propietario){
-         
-       
-
-        
-    
-        //$Propietario = new Propietario();
-       $Piscicultor = Piscicultor::create($request->all());
-       $Piscicultor->propietario_id = $Propietario->id_propietario;
-       $Piscicultor->save();
-       //$Piscicultor->propietario_id = $Propietario->id_propietario->get();
-       return redirect()->route('asignarEmpleado', $Propietario); 
-       //return view('piscicultor.show', compact('Propietario'));
-    }
+   
 
 
 }
