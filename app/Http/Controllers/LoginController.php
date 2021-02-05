@@ -8,19 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    //
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('correo', 'password');
+        $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('propietario')->attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('cultivos.index');
         }
 
         return back()->withErrors([
-            'correo' => 'sigue intentando',
+            'email' => 'The provided credentials do not match our records.',
         ]);
     }
+   
 }

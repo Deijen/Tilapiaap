@@ -6,7 +6,7 @@
 <div>
     <p class="flex justify-center font-serif text-7xl text-blue-400">PAGINA INICIAL</p>
 </div>
-<form action="{{route('inicio')}}" method="POST">
+<form action="" method="">
     @csrf
 
     <div class="container mx-10">

@@ -21,7 +21,7 @@ use phpDocumentor\Reflection\Types\Resource_;
 
 Route::get('/', HomeController::class)->name('home'); 
 
-Route::post('login', [LoginController::class, 'authenticate'])->name('inicio');
+//Route::post('login', [LoginController::class, 'authenticate'])->name('inicio');
 
 /* Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 

@@ -2,25 +2,14 @@
 
 namespace App\Models;
 
-use \Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use \Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class Propietario extends Authenticatable
+class Propietario extends Model
 {
-    //use HasFactory;
-    use Notifiable;
-=======
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-
-class Propietario extends Authenticatable
-{
-    use HasFactory, Notifiable;
->>>>>>> 381a5977f6ee4379c00e042ebc05670dc893365e
+    use HasFactory;
 
     /**
      * Le damos a entender a eloquent que el modelo Cultivo corresponde a la tabla create_propietario, 
