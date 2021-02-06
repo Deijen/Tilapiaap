@@ -45,9 +45,7 @@ class CultivoController extends Controller
 
     public function update(Request $request,Cultivo $Cultivo){
 
-        $Cultivo->costosMantenimiento = $request->costosMantenimiento;
-
-        $Cultivo->save();
+        $Cultivo->update($request->all());
 
         return redirect()->route('cultivos.show', $Cultivo);
 

@@ -1,10 +1,11 @@
-@extends('layout.plantilla2')
+@extends('layouts.plantilla2')
 
 @section('title', 'Cultivo ' . $Cultivo->id_cultivo)  
 
 @section('content')
 <h1>Mostrando Cultivo</h1>
 <p><strong>ID_cultivo: </strong> {{$Cultivo->id_cultivo}}</p>
+<p><strong>id_piscicultor: </strong> {{$loggedPiscicultorInfo['id_piscicultor']}}</p>
 <br>
 
 <p><strong><a href="">Tabla de alimentación (link que llevará a la tabla de alimentacion)</a> </strong> {{$Cultivo->tablaAlimentacion_id}}</p>
