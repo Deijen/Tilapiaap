@@ -65,7 +65,7 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
  * NOTA: El login se hará manual 
  */
 
-Route::get('/auth/login', [LoginController::class, 'login'])->name('auth.login');
+Route::get('/auth/login', [LoginController::class, 'login'])->name('propietario.login');
 Route::post('/auth/check', [LoginController::class, 'check'])->name('auth.check');
 
  

@@ -4,7 +4,7 @@
 
 @section('content')
 <div>
-    <p class="flex justify-center font-serif text-7xl text-blue-400">PAGINA INICIAL</p>
+    <p class="flex justify-center font-serif text-7xl text-blue-400">Login para el propietario</p>
 </div>
 <form action="{{route('auth.check')}}" method="POST">
    
