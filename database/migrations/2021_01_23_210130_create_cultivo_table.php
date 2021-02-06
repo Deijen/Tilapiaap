@@ -19,19 +19,19 @@ class CreateCultivoTable extends Migration
             //$table->foreign('piscicultor_id')->references('id_piscicultor')->on('piscicultor')->nullable(); //llave foranea de piscicultor
             $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
             $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
-            $table->integer('cantidadTilapias');
-            $table->integer('costosMantenimiento');
-            $table->string('intensidad');
-            $table->string('estado');
-            $table->integer('oxigeno');
-            $table->integer('temperatura');
-            $table->integer('ph');
-            $table->integer('amonio');
-            $table->integer('nitritos');
-            $table->integer('dioxidoCarbono');
-            $table->integer('fosfatos');
-            $table->integer('cloruros');
-            $table->integer('sulfatos');
+            $table->integer('cantidadTilapias')->nullable();
+            $table->integer('costosMantenimiento')->nullable();
+            $table->string('intensidad')->nullable();
+            $table->string('estado')->nullable();
+            $table->integer('oxigeno')->nullable();
+            $table->integer('temperatura')->nullable();
+            $table->integer('ph')->nullable();
+            $table->integer('amonio')->nullable();
+            $table->integer('nitritos')->nullable();
+            $table->integer('dioxidoCarbono')->nullable();
+            $table->integer('fosfatos')->nullable();
+            $table->integer('cloruros')->nullable();
+            $table->integer('sulfatos')->nullable();
             $table->timestamps();
         });
     }

@@ -43,17 +43,11 @@ class CultivoController extends Controller
 
     }
 
-    public function update(StoreCultivo $request,Cultivo $Cultivo){
+    public function update(Request $request,Cultivo $Cultivo){
 
-       
+        $Cultivo->costosMantenimiento = $request->costosMantenimiento;
 
-        /* $Cultivo->name = $request->name;
-        $Cultivo->description = $request->description;
-        $Cultivo->categoria = $request->categoria;
-
-        $Cultivo->save(); */
-
-        $Cultivo->update($request->all());
+        $Cultivo->save();
 
         return redirect()->route('cultivos.show', $Cultivo);
 
@@ -69,7 +63,7 @@ class CultivoController extends Controller
      * La función store funciona como un insert de sql
      * 
      */
-    public function store(StoreCultivo $request){
+    public function store(){
 
         /* $request->validate([
 
@@ -87,9 +81,9 @@ class CultivoController extends Controller
 
         $Cultivo->save(); */
 
-        $Cultivo = Cultivo::create($request->all());
+        $Cultivo = Cultivo::create();
 
-        return redirect()->route('cultivos.show', $Cultivo); 
+        return redirect()->route('cultivos.index'); 
             
     }
 

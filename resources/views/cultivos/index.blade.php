@@ -4,7 +4,10 @@
 
 @section('content')
 <h1>Interfaz propietario</h1>
-<a href={{route('cultivos.create')}}>Crear cultivo</a>
+<form action="{{route('cultivos.store')}}" method="POST">
+    @csrf
+    <button type="submit">Crear cultivo</button>
+</form>
 <br>
 <a href="{{route('empleados.create')}}"> Crear piscicultor</a>
 <ul>

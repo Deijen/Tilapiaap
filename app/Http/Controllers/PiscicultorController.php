@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Piscicultor;
 use Illuminate\Http\Request;
+use App\Models\Cultivo;
 
 class PiscicultorController extends Controller
 {
@@ -13,8 +15,13 @@ class PiscicultorController extends Controller
      */
     public function index()
     {
-        //
-        return view("parametros.seleccion");
+        $data = ['loggedPiscicultorInfo'=>Piscicultor::where('id_piscicultor', session('LoggedPiscicultor'))->first()];
+
+        return $data;
+
+        /* $cultivo = Cultivo::where('id_cultivo', $loggedPiscicultorInfo->cultivo_id)->first(); */
+
+        return view("parametros.show", compact('cultivo'));
     }
 
     /**

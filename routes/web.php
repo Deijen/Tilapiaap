@@ -53,7 +53,7 @@ Route::resource('empleados', EmpleadoController::class)->parameters(['empleados'
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
-Route::resource('piscicultor', PiscicultorController::class);
+Route::resource('piscicultor', PiscicultorController::class)->parameters(['piscicultor' => 'parametros']);;
 
 ////////////////
 /**
