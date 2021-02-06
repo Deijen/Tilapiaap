@@ -61,7 +61,7 @@ class LoginController extends Controller
         else{
             if($userInfo->password == $request->password){
 
-                $request->session()->put('LoggedPiscicultor', $userInfo->id);
+                $request->session()->put('LoggedPiscicultor', $userInfo->id_piscicultor);
                 return redirect()->route('cultivos.index'); 
 
             }

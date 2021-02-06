@@ -31,7 +31,7 @@ class PropietarioFactory extends Factory
             'id_propietario' => '1', //Auto incrementar el id
             'Nombre'=>$this->faker->name,
             'patrimonio'=> '100000000',
-            'email'=>'propietario@hotmail.com',   //$this->faker->unique()->safeEmail, Utilizar esta sentencia para crear un correo aleatorio
+            'correo'=>'propietario@hotmail.com',   //$this->faker->unique()->safeEmail, Utilizar esta sentencia para crear un correo aleatorio
             'password'=> 'contraseña'
         ];
     }

@@ -22,7 +22,8 @@ class Piscicultor extends Model
         'id_piscicultor',
         'Nombre',
         'salario',
-        'correo'
+        'correo',
+        'password'
        
     ];
 }

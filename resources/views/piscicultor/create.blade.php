@@ -73,8 +73,21 @@
         @enderror
          <!-------------------------------------------------------------------->
 
-
+         <br>
+         <label>
+            Contraseña. 
+            <br>
+            <input type="text" name="password" value="{{old('password')}}">
+        </label>
+        @error('password')
         <br>
+        <small>*{{$message}}</small>
+        <br>
+        @enderror
+        <br>
+
+
+
         <button type="submit">Enviar formulario</button>
     
     </form>
