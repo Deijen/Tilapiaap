@@ -16,5 +16,7 @@
 <!-- el metodo "links" sirve para paginar y mostrar los cultivos-->
 {{$Cultivo->links()}}
 <a href={{route('home')}}>Volver Home</a>
+
+
 @endsection
 

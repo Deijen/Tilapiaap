@@ -16,13 +16,13 @@ class AuthCheckPropietario
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedOwner') && ($request->path() != 'auth/login' && $request->path() !='auth/register')){
+        if(!session()->has('LoggedPropietario') && ($request->path() != 'auth/loginPropietario')){
 
-            return redirect()->route('auth.login')->with('A donde te me vuelas :eyes: ');
+            return redirect()->route('auth.loginPropietario')->with('A donde te me vuelas :eyes: ');
 
         }
 
-        if(session()->has('LoggedOwner') && ($request->path() == 'auth/login' && $request->path() == 'auth/register')){
+        if(session()->has('LoggedPropietario') && ($request->path() == 'auth/loginPropietario')){
 
             return back();
 
