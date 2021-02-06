@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Propietario;
@@ -52,9 +53,12 @@ class LoginController extends Controller
 
     }
 
+
+
+
     public function checkPiscicultor(Request $request){
 
-        $userInfo = Propietario::where('correo', $request->correo)->first();
+        $userInfo = Piscicultor::where('correo', $request->correo)->first();
 
         if(!$userInfo){
             return back()->with('Cagasta papa');
@@ -63,7 +67,7 @@ class LoginController extends Controller
             if($userInfo->password == $request->password){
 
                 $request->session()->put('LoggedPiscicultor', $userInfo->id_piscicultor);
-                return redirect()->route('cultivos.index'); 
+                return redirect()->route('piscicultor.index'); 
 
             }
             else{

@@ -5,7 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CultivoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\LoginController;
-use phpDocumentor\Reflection\Types\Resource_;
+use phpDocumentor\Reflection\Types\Resource_; 
+use App\Http\Controllers\PiscicultorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,8 @@ Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckProp
 Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor']);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
+
+Route::resource('piscicultor', PiscicultorController::class);
 
 ////////////////
 /**

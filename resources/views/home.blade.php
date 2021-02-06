@@ -19,7 +19,7 @@
         <br>
         <br>
         <label>
-          <a href="">login Piscicultor</a>
+          <a href="{{route('auth.loginPiscicultor')}}">login Piscicultor</a>
         </label>
         <br>
         <br>

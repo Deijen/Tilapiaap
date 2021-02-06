@@ -16,7 +16,7 @@ class AuthCheckPiscicultor
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('LoggedPiscicultor') && ($request->path() != '/auth/loginPiscicultor' && $request->path() !='auth/register')){
+        if(!session()->has('LoggedPiscicultor') && ($request->path() != '/auth/loginPiscicultor' )){
 
             return redirect()->route('auth/loginPiscicultor')->with('A donde te me vuelas :eyes: ');
 
