@@ -2,11 +2,11 @@
 
 @section('title', 'Home')
 
-@section('content')
+@section('content') 
 <div>
-    <p class="flex justify-center font-serif text-7xl text-blue-400">LOGIN PROPIETARIO</p>
+    <p class="flex justify-center font-serif text-7xl text-blue-400">LOG IN PISCICULTOR</p>
 </div>
-<form action="{{route('auth.checkPropietario')}}" method="POST">
+<form action="{{route('auth.checkPiscicultor')}}" method="POST">
    
     @csrf
 

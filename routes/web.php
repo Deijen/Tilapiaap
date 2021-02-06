@@ -65,8 +65,10 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
  * NOTA: El login se hará manual 
  */
 
-Route::get('/auth/login', [LoginController::class, 'login'])->name('auth.login');
-Route::post('/auth/check', [LoginController::class, 'check'])->name('auth.check');
+Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
+Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
+Route::get('/auth/loginPiscicultor', [LoginController::class, 'loginPiscicultor'])->name('auth.loginPiscicultor');
+Route::post('/auth/checkPiscicultor', [LoginController::class, 'checkPiscicultor'])->name('auth.checkPiscicultor');
 
  
  

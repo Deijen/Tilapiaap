@@ -25,6 +25,7 @@ class CreatePiscicultorTable extends Migration
             $table->String('Nombre');
             $table->double('salario');
             $table->String('correo');
+            $table->String('password');
            // $table->String('contraseña'); //El Propietario le asignará la contraseña a sus piscicultores
             $table->timestamps();
         });
