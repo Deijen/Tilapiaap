@@ -14,7 +14,7 @@
     <div class="container mx-10">
         <h1></h1>
         <label>
-           <strong> <a href={{route('propietario.login')}}> login propietario</a></strong>
+         <a href={{route('auth.loginPropietario')}}> login propietario</a>
         </label>
         <br>
         <br>

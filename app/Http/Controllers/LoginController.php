@@ -10,23 +10,23 @@ use App\Models\Propietario;
 class LoginController extends Controller
 {
  
-    public function login(){
+    public function loginPropietario(){
 
         return view('auth.loginPropietario');
 
     }
 
-    public function check(Request $request){
+    public function checkPropietario(Request $request){
 
         $userInfo = Propietario::where('correo', $request->correo)->first();
 
-        if(! $userInfo){
+        if(!$userInfo){
             return back()->with('Cagasta papa');
         }
         else{
             if($userInfo->password == $request->password){
 
-                $request->session()->put('LoggedOwner', $userInfo->id);
+                $request->session()->put('LoggedPropietario', $userInfo->id_propietario);
                 return redirect()->route('cultivos.index'); 
 
             }
@@ -37,10 +37,46 @@ class LoginController extends Controller
 
     }
 
-    public function logout(){
+    public function logoutPropietario(){
 
-        if(session()->has('loggedUser')){
-            session()->pull('LoggedUser');
+        if(session()->has('loggedPropietario')){
+            session()->pull('LoggedPropietario');
+            return redirect()->route('auth.login');
+        }
+
+    }
+
+    public function loginPiscicultor(){
+
+        return view('auth.loginPiscicultor');
+
+    }
+
+    public function checkPiscicultor(Request $request){
+
+        $userInfo = Propietario::where('correo', $request->correo)->first();
+
+        if(!$userInfo){
+            return back()->with('Cagasta papa');
+        }
+        else{
+            if($userInfo->password == $request->password){
+
+                $request->session()->put('LoggedPiscicultor', $userInfo->id_piscicultor);
+                return redirect()->route('cultivos.index'); 
+
+            }
+            else{
+                return back()->with('Cagasta papa con la password');
+            }
+        }
+
+    }
+
+    public function logoutPiscicultor(){
+
+        if(session()->has('loggedPiscicultor')){
+            session()->pull('LoggedPiscicultor');
             return redirect()->route('auth.login');
         }
 

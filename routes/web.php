@@ -21,6 +21,12 @@ use phpDocumentor\Reflection\Types\Resource_;
 
 Route::get('/', HomeController::class)->name('home'); 
 
+Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
+Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
+Route::get('/auth/loginPiscicultor', [LoginController::class, 'loginPiscicultor'])->name('auth.loginPiscicultor');
+Route::post('/auth/checkPiscicultor', [LoginController::class, 'checkPiscicultor'])->name('auth.checkPiscicultor');
+
+
 //Route::get('/', [SesionController::class, 'iniciarLogin'])->name('inicioSesion');
 
 
@@ -40,7 +46,7 @@ Route::put('cursos/{curso}/', [CursoController::class, 'update'])->name('cursos.
 
 Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cursos.destroy'); */
 
-Route::resource('cultivos', CultivoController::class);
+Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckPropietario');
 
 Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor']);
 
@@ -60,13 +66,8 @@ Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController
  Route::post('idPropietario/{Propietario}', [EmpleadoController::class, 'crearPiscicultor'])->name('crearEmpleado');
 ///////////////////
 
-/**
- *Rutas para el login  
- * NOTA: El login se hará manual 
- */
 
-Route::get('/auth/login', [LoginController::class, 'login'])->name('propietario.login');
-Route::post('/auth/check', [LoginController::class, 'check'])->name('auth.check');
+
 
  
  
