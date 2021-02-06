@@ -29,8 +29,20 @@ class Cultivo extends Model
       */
     protected $fillable =[
         'id_cultivo',
-         'valor'];
-
+        'cantidadTilapias',
+        'costosMantenimiento',
+        'intensidad',
+        'estado',
+        'oxigeno',
+        'temperatura',
+        'ph',
+        'amonio',
+        'nitritos',
+        'dioxidoCarbono',
+        'fosfatos',
+        'cloruros',
+        'sulfatos'
+    ];
     //comentario perrón
 
 }

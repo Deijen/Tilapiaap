@@ -15,6 +15,10 @@ class Propietario extends Authenticatable
      * Le damos a entender a eloquent que el modelo Cultivo corresponde a la tabla create_propietario, 
      * o en su defecto, propietario
      */
+
+
+    protected $guard = 'propietario';
+
     protected $table = 'propietario';
 
     protected $primaryKey = 'id_propietario';

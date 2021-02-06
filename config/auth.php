@@ -38,7 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'propietarios',
+            'provider' => 'users',
+        ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
         ],
 
         'api' => [
@@ -46,6 +51,12 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'propietario-api' =>[
+            'driver' => 'token',
+            'provider' => 'propietarios',
+        ],
+
 
         'propietario' =>[
             'driver' => 'session',

@@ -24,15 +24,27 @@ class StoreCultivo extends FormRequest
     public function rules()
     {
         return [
-            'valor' => 'required|integer'
+            'cantidadTilapias' => 'required|integer|min:0',
+            'costosMantenimiento' => 'required|integer|min:0',
+            'intensidad' => 'required',
+            'estado' => 'required',
+            'oxigeno' => 'required|integer|min:0',
+            'temperatura' => 'required|integer|min:0',
+            'ph' => 'required|integer|min:0',
+            'amonio' => 'required|integer|min:0',
+            'nitritos' => 'required|integer|min:0',
+            'dioxidoCarbono' => 'required|integer|min:0',
+            'fosfatos' => 'required|integer|min:0',
+            'cloruros' => 'required|integer|min:0',
+            'sulfatos' => 'required|integer|min:0'
         ];
     }
 
     public function messages()
     {
         return[
-            'valor.required' => 'Campo Requerido',
-            'valor.integer' => 'Valor ingresado no numerico'
+            'costosMantenimiento.min' => 'Los costos de mantenimiento deben ser al menos 0',
+            'cantidadTilapias.min' => 'La cantidad de tilapias debe ser al menos 0'
         ];
     }
 

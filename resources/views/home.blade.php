@@ -14,7 +14,7 @@
         <label>
             Usuario: 
             <br>
-            <input type="text" name="user" class="border-2 border-black">
+            <input type="text" name="email" class="border-2 border-black">
         </label>
         
         <br>

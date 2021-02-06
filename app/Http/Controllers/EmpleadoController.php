@@ -29,17 +29,15 @@ class EmpleadoController extends Controller
 
     }
 
-    public function update(StoreEmpleado $request,Piscicultor $Piscicultor){
+    public function update(Request $request,Piscicultor $Piscicultor){
 
-   /*
+   
         $request->validate([
 
-            'name'=>'required',
-            'description' => 'required',
-            'categoria' => 'required'
+            'Nombre' => 'required',
 
         ]);
-         */  
+         
 
 
         /* $Piscicultor->name = $request->name;

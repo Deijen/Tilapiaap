@@ -14,9 +14,13 @@ class chekPropietario
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next, $guard = 'propietario')
     {
-        echo "el middleware se está aplicando a esta ruta";
+        if(!auth()->guard($guard)->check()) {
+            return redirect(url('/'));
+        }
+
         return $next($request);
+
     }
 }

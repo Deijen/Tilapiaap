@@ -8,19 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    //
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->only('correo', 'password');
+ 
+public function authenticate(Request $request){
+    
+        $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('propietario')->attempt($credentials)) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+
+            return 'Autentico wapisimo';
+
             $request->session()->regenerate();
 
-            return redirect()->intended('cultivos.index');
+            return redirect()->intended(route('cultivos.index'));
         }
 
-        return back()->withErrors([
-            'correo' => 'sigue intentando',
-        ]);
+        return 'No autentico wapisimo'; 
     }
 }

@@ -89,9 +89,9 @@ class CultivoController extends Controller
 
         $Cultivo = Cultivo::create($request->all());
 
-        return redirect()->route('cultivos.show', $Cultivo);
-        
-
+        return redirect()->route('cultivos.show', $Cultivo); 
+            
+        return redirect()->route('home');
     }
 
 
