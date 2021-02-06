@@ -17,6 +17,7 @@ class PiscicultorController extends Controller
     {
         $data = ['loggedPiscicultorInfo'=>Piscicultor::where('id_piscicultor', session('LoggedPiscicultor'))->first()];
 
+
         return $data;
 
         /* $cultivo = Cultivo::where('id_cultivo', $loggedPiscicultorInfo->cultivo_id)->first(); */
@@ -88,5 +89,15 @@ class PiscicultorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function mostrarIndex(Piscicultor $idPiscicultor, Cultivo $idCultivo){
+
+        if($idPiscicultor->cultivo_id == $idCultivo->id_cultivo){
+            //return redirect()->route('cultivos.show', $idCultivo); 
+            
+        }
+
     }
 }
