@@ -29,7 +29,7 @@ class StoreCultivo extends FormRequest
             'intensidad' => 'required',
             'estado' => 'required',
             'oxigeno' => 'required|integer|min:0',
-            'temperatura' => 'required|integer|min:0',
+            'temperatura' => 'required|integer|min:1',
             'ph' => 'required|integer|min:0',
             'amonio' => 'required|integer|min:0',
             'nitritos' => 'required|integer|min:0',
@@ -43,7 +43,7 @@ class StoreCultivo extends FormRequest
     public function messages()
     {
         return[
-            'costosMantenimiento.min' => 'Los costos de mantenimiento deben ser al menos 0',
+            'costosMantenimiento.min' => 'Los costos de mantenimiento deben ser al menos 1',
             'cantidadTilapias.min' => 'La cantidad de tilapias debe ser al menos 0'
         ];
     }

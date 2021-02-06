@@ -10,7 +10,7 @@
 <ul>
     <h1> Listado de cultivos</h1>
     @foreach ($Cultivo as $item)
-    <strong> <a  href="{{route('cultivos.show', $item->id_cultivo)}}"><li>{{$item->id_cultivo}}</li></a> </strong>
+    <p> <a  href="{{route('cultivos.show', $item->id_cultivo)}}"><li>{{$item->id_cultivo}}</li></a> </p>
     @endforeach
 </ul>
 <!-- el metodo "links" sirve para paginar y mostrar los cultivos-->

@@ -91,7 +91,6 @@ class CultivoController extends Controller
 
         return redirect()->route('cultivos.show', $Cultivo); 
             
-        return redirect()->route('home');
     }
 
 
