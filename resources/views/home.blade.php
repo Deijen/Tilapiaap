@@ -35,6 +35,7 @@
 <br>
 <a href={{route('cultivos.index')}}>interfaz Propietario (cultivos.index - borrar) </a>
 <br>
-<a href="">interfaz Piscicultor </a>
+<p><a href="{{route('auth.loginPiscicultor')}}">Login Piscicultor</a></p>
+
 
 @endsection
