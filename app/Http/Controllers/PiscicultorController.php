@@ -17,11 +17,9 @@ class PiscicultorController extends Controller
     {
         $data = ['loggedPiscicultorInfo'=>Piscicultor::where('id_piscicultor', session('LoggedPiscicultor'))->first()];
 
-        return $data;
+        $Cultivo = Cultivo::where('id_cultivo', $data['loggedPiscicultorInfo']->cultivo_id)->first();
 
-        /* $cultivo = Cultivo::where('id_cultivo', $loggedPiscicultorInfo->cultivo_id)->first(); */
-
-        return view("parametros.show", compact('cultivo'));
+        return view("parametros.show", compact('Cultivo',), $data );
     }
 
     /**
