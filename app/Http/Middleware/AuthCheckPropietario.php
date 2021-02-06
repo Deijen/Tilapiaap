@@ -18,7 +18,7 @@ class AuthCheckPropietario
     {
         if(!session()->has('LoggedOwner') && ($request->path() != 'auth/login' && $request->path() !='auth/register')){
 
-            return redirect()->route('auth/login')->with('A donde te me vuelas :eyes: ');
+            return redirect()->route('auth.login')->with('A donde te me vuelas :eyes: ');
 
         }
 

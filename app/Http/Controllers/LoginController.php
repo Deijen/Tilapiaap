@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         $userInfo = Propietario::where('correo', $request->correo)->first();
 
-        if(! $userInfo){
+        if(!$userInfo){
             return back()->with('Cagasta papa');
         }
         else{

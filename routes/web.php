@@ -40,7 +40,7 @@ Route::put('cursos/{curso}/', [CursoController::class, 'update'])->name('cursos.
 
 Route::delete('cursos/{curso}/', [CursoController::class, 'destroy'])->name('cursos.destroy'); */
 
-Route::resource('cultivos', CultivoController::class);
+Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckPropietario');
 
 Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor']);
 
