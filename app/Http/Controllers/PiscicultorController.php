@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cultivo;
 use App\Models\TablaAlimentacion;
 use GuzzleHttp\RetryMiddleware;
+use Illuminate\Support\Facades\DB;
 
 class PiscicultorController extends Controller
 {
@@ -21,17 +22,21 @@ class PiscicultorController extends Controller
 
         $Cultivo = Cultivo::where('id_cultivo', $data['loggedPiscicultorInfo']->cultivo_id)->first();
 
-        return view("interfazPiscicultor.parametros.show", compact('Cultivo',), $data );
+        return view("InterfazPiscicultor.parametros.show", compact('Cultivo',), $data );
     }
 
 
     public function tablaShow(){
 
-        $tablaAlimentacion = TablaAlimentacion::first();
+       $tablaAlimentacion = TablaAlimentacion::first();
 
-        return $tablaAlimentacion;
+      //  $tablaAlimentacion = DB::table('tablaalimentacion')->get();
 
-        return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
+       //return "hola";
+
+        //return $tablaAlimentacion;
+
+       return view("InterfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
 
     }
 

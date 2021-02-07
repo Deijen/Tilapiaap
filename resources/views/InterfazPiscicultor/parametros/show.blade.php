@@ -24,7 +24,7 @@
 <br>
 <a href="{{route('piscicultor.edit', $Cultivo)}}">Actualizar Parametros</a>
 <br>
-<a href="{{route('tablaAlimentacion.show')}}">Ver tabla de alimentacion</a>
+<a href="{{route('tablaAlimentacion.show111')}}">Ver tabla de alimentacion</a>
 <br>
 <a href="{{route('auth.logoutPiscicultor')}}">Logout</a>
 
