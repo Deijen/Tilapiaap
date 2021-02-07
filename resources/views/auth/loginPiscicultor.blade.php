@@ -7,30 +7,7 @@
 </div>
 
 <form action="{{route('auth.checkPiscicultor')}}" method="POST">
-<!--
     @csrf
-
-    <div class="container mx-10">
-        <h1></h1>
-        <label>
-            Usuario: 
-            <br>
-            <input type="text" name="correo" class="border-2 border-black">
-        </label>
-        
-        <br>
-        <label>
-            Contraseña:
-            <br>
-            <input type="password" name="password" class="border-2 border-black">
-        </label>
-        <br>
-        <br>
-        <button type="submit" class="flex justify-center border-2 border-black w-20">Log in</button>
-        <br>
-        <a href="{{route('home')}}">Volver</a>
-    </div>
--->
     <div class="formulario_login">
         <img class="avatar" src="/img/Piscicultor.png">
         <label for="username">E-Mail:</label>
