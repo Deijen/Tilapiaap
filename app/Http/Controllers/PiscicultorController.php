@@ -29,8 +29,6 @@ class PiscicultorController extends Controller
 
         $tablaAlimentacion = TablaAlimentacion::first();
 
-        return 'tablaAlimentacion';
-
         return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
 
     }

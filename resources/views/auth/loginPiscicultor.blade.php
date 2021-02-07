@@ -27,6 +27,8 @@
         <br>
         <br>
         <button type="submit" class="flex justify-center border-2 border-black w-20">Log in</button>
+        <br>
+        <a href="{{route('home')}}">Volver</a>
     </div>
 
 

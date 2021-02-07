@@ -7,7 +7,7 @@
 <br>
 
 <!--cultivo.update ,manda los datos del formulario-->
-<form action="{{route('tabla.update', $tablaAlimentacion)}}" method="post"> 
+<form action="{{route('tablaAlimentacion.update', $tablaAlimentacion)}}" method="post"> 
 
     <br>
     <label>
@@ -28,9 +28,9 @@
         Tamizado :
         <br>
         <input type="radio" name="Tamizado" value="Si">
-        <label for="si">Si</label><br>
+        <label for="Si">Si</label><br>
         <input type="radio"  name="Tamizado" value="No">
-        <label for="no">No</label><br>>
+        <label for="Si">No</label><br>
 
     </label>
 
