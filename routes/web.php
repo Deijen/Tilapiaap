@@ -22,16 +22,18 @@ use App\Http\Controllers\PiscicultorController;
 
 Route::get('/', HomeController::class)->name('home'); 
 
-Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show')->middleware('AuthCheckPiscicultor');
-
-Route::get('generate-pdf/{cultivo}', [CultivoController::class, 'generatePDF'])->name('informe.show');
-
 Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
 Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
 Route::get('/auth/loginPiscicultor', [LoginController::class, 'loginPiscicultor'])->name('auth.loginPiscicultor');
 Route::post('/auth/checkPiscicultor', [LoginController::class, 'checkPiscicultor'])->name('auth.checkPiscicultor');
 Route::get('/auth/logoutPropietario', [LoginController::class, 'logoutPropietario'])->name('auth.logoutPropietario');
 Route::get('/auth/logoutPiscicultor', [LoginController::class, 'logoutPiscicultor'])->name('auth.logoutPiscicultor');
+
+Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show')->middleware('AuthCheckPiscicultor');
+
+Route::get('generate-pdf/{cultivo}', [CultivoController::class, 'generatePDF'])->name('informe.show');
+
+
 
 
 

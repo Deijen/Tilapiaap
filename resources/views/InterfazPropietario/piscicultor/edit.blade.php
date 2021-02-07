@@ -20,7 +20,7 @@
     <label>
         Nombre del Piscicultor a editar:
         <br>
-        <input type="text" name="Nombre" value="{{old('description', $Piscicultor->Nombre)}}">
+        <input type="text" name="Nombre" value="{{old('Nombre', $Piscicultor->Nombre)}}">
     </label>
 
     @error('Nombre')
@@ -30,8 +30,42 @@
     @enderror
 
     <br>
-    
 
+    <label>
+        Salario:
+        <br>
+        <input type="text" name="salario" value="{{old('salario', $Piscicultor->salario)}}">
+    </label>
+
+    @error('salario')
+    <br>
+    <small>*{{$message}}</small>
+    <br>
+    @enderror
+    <br>
+    <label>
+        Correo:
+        <br>
+        <input type="text" name="correo" value="{{old('correo', $Piscicultor->correo)}}">
+    </label>
+    <br>
+    @error('correo')
+    <br>
+    <small>*{{$message}}</small>
+    <br>
+    @enderror
+    <br>
+    <label>
+        Contraseña:
+        <br>
+        <input type="text" name="password" value="{{old('password', $Piscicultor->password)}}">
+    </label>
+
+    @error('password')
+    <br>
+    <small>*{{$message}}</small>
+    <br>
+    @enderror
     
     <br>
    

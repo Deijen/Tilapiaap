@@ -54,7 +54,7 @@
     <label>
         Costo de mantenimiento :
         <br>
-        <input type="text" name="costosMantenimiento" value="{{old('costosMantenimiento', $Cultivo->costosMantenimiento)}}">
+        <input type="number" name="costosMantenimiento" value="{{old('costosMantenimiento', $Cultivo->costosMantenimiento)}}">
     </label>
 
     @error('costosMantenimiento')

@@ -26,8 +26,9 @@ class StoreEmpleado extends FormRequest
         return [
             'id_piscicultor' => 'required|integer',
             'Nombre' => 'required',
-            'salario' => 'required|integer',
-            'correo' => 'required|email'
+            'salario' => 'required|integer|min:0',
+            'correo' => 'required|email',
+            'password' => 'required'
         ];
     }
 
