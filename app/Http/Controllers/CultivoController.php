@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCultivo;
-use App\Http\Requests\StoreCurso;
 use App\Models\Cultivo;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class CultivoController extends Controller
 {
@@ -63,22 +63,6 @@ class CultivoController extends Controller
      */
     public function store(){
 
-        /* $request->validate([
-
-            'nombre'=>'required',
-            'descripcion' => 'required',
-            'categoria' => 'required'
-
-        ]);
-
-         $Cultivo = new Cultivo();
-
-        $Cultivo->cultivo_id = $request->cultivo_id;
-        $Cultivo->piscicultor_id = $request->piscicultor_id;
-        $Cultivo->valores = $request->valores;
-
-        $Cultivo->save(); */
-
         $Cultivo = Cultivo::create();
 
         return redirect()->route('cultivos.index'); 
@@ -96,18 +80,18 @@ class CultivoController extends Controller
 
     } 
 
-   
-   /*
-    public function mostrarEmpleadosDisponibles(Cultivo $cultivoid){
+    public function generatePDF(Cultivo $Cultivo)
+    {
+        $date = date(now());
 
-        //$piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
-        
-
-        foreach ($Piscicultor as $item) {
-            echo $item->Nombre;
-        }
-    } 
-    //
-    */
+        $data = [
+            'title' => 'INFORME',
+            'date' => date(now())
+        ];
+          
+        $pdf = PDF::loadView('interfazPropietario.informe.show', $data, compact('Cultivo'));
+    
+        return $pdf->download('INFORME CULTIVO -'.$Cultivo->id_cultivo. '-'.$date. '.pdf');
+    }
 
 }

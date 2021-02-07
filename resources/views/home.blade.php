@@ -1,38 +1,24 @@
-@extends('layouts.judas')
+@extends('layouts.index')
 
 @section('title', 'Home')
 
 @section('content')
 <div>
-    <p class="flex justify-center font-serif text-7xl text-blue-400">PAGINA INICIAL (acceso del login)</p>
+    <p>LOGIN HERE</p>
+    <br>
 </div>
-
-    @csrf
-
-    <br>
-    <br>
     <div class="container mx-10">
         <label>
-         <a href={{route('auth.loginPropietario')}}> login propietario</a>
+            <a href={{route('auth.loginPropietario')}}> <i id="yep" class="fas fa-user-tie"></i>  </a>
         </label>
         <br>
         <br>
         <label>
-          <a href="{{route('auth.loginPiscicultor')}}">login Piscicultor</a>
+          <a href="{{route('auth.loginPiscicultor')}}"> <i id="yep" class="fas fa-user-alt"></i></a>
         </label>
         <br>
         <br>
 
     </div>
-
-
-
-
-
-<br>
-<br>
-<br>
-
-
 
 @endsection

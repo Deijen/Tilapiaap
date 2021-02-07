@@ -22,7 +22,7 @@ class LoginController extends Controller
         $userInfo = Propietario::where('correo', $request->correo)->first();
 
         if(!$userInfo){
-            return back()->with('Cagasta papa');
+            return back()->with('error');
         }
         else{
             if($userInfo->password == $request->password){
@@ -31,7 +31,7 @@ class LoginController extends Controller
 
             }
             else{
-                return back()->with('Cagasta papa con la password');
+                return back()->with('error');
             }
         }
 
@@ -60,7 +60,7 @@ class LoginController extends Controller
         $userInfo = Piscicultor::where('correo', $request->correo)->first();
 
         if(!$userInfo){
-            return back()->with('Cagasta papa');
+            return back()->with('error');
         }
         else{
             if($userInfo->password == $request->password){
@@ -70,7 +70,7 @@ class LoginController extends Controller
 
             }
             else{
-                return back()->with('Cagasta papa con la password');
+                return back()->with('error');
             }
         }
 

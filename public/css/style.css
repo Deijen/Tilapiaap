@@ -36,10 +36,9 @@ body{
 }
 
 .contenedor .contenido{
-    grid-column-start: 1;
-    grid-column-end: -1;
+    grid-column: span 2;
 }
-/*
+
 .contenedor .sidebar{
     grid-column: 3 / 4;
     background: #FAA43D;
@@ -48,7 +47,7 @@ body{
     align-items: center;
     justify-content: center;
     grid-row: span 2;
-}*/
+}
 
 .contenedor .widget-1,
 .contenedor .widget-2{
@@ -65,4 +64,12 @@ body{
     background: #12203e;
     color: #FFF;
     grid-column: span 3;
+}
+
+.fa-user-tie{
+    width: 100px;
+	height: 100px;
+    font-size: 50px;
+	color: black;
+    text-align: center;
 }
