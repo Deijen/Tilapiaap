@@ -22,7 +22,7 @@ use App\Http\Controllers\PiscicultorController;
 
 Route::get('/', HomeController::class)->name('home'); 
 
-Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show111');
+Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show');
 
 Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
 Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
@@ -37,14 +37,15 @@ Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckProp
 
 Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor'])->middleware('AuthCheckPropietario');
 
+
+Route::group(['middleware' => 'AuthCheckPiscicultor'], function() {
+
 Route::resource('piscicultor', PiscicultorController::class)->parameters(['piscicultor' => 'cultivo']);
-
-
 
 Route::get('piscicultor/tablaAlimentacion/edit/{tablaAlimentacion}', [PiscicultorController::class, 'tablaEdit'])->name('tablaAlimentacion.edit');
 
 Route::post('piscicultor/tablaAlimentacion/update/{tablaAlimentacion}', [PiscicultorController::class, 'tablaUpdate'])->name('tablaAlimentacion.update');
-
+});
 ////////////////
 /**
  * Ruta para asignar piscicultores

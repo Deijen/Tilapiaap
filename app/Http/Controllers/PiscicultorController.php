@@ -30,13 +30,7 @@ class PiscicultorController extends Controller
 
        $tablaAlimentacion = TablaAlimentacion::first();
 
-      //  $tablaAlimentacion = DB::table('tablaalimentacion')->get();
-
-       //return "hola";
-
-        //return $tablaAlimentacion;
-
-       return view("InterfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
+        return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
 
     }
 
@@ -45,6 +39,12 @@ class PiscicultorController extends Controller
         $tablaAlimentacion->update($request->all);
 
         return redirect()->route('tablaAlimentacion.show');
+
+    }
+
+    public function tablaEdit(TablaAlimentacion $tablaAlimentacion){
+
+        return view("interfazPiscicultor.tablaAlimentacion.edit", compact('tablaAlimentacion'));
 
     }
 

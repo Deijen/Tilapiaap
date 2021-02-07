@@ -10,7 +10,7 @@
 <p><strong>Tamaño de particula: </strong> {{$tablaAlimentacion->tamañoParticula}}</p>
 
 <br>
-<a href="{{route('tabla.edit', $tablaAlimentacion)}}">Actualizar tabla de alimentacion</a>
+<a href="{{route('tablaAlimentacion.edit', $tablaAlimentacion)}}">Actualizar tabla de alimentacion</a>
 <br>
 
 @endsection
