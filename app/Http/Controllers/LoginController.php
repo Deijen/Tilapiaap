@@ -39,9 +39,9 @@ class LoginController extends Controller
 
     public function logoutPropietario(){
 
-        if(session()->has('loggedPropietario')){
+        if(session()->has('LoggedPropietario')){
             session()->pull('LoggedPropietario');
-            return redirect()->route('auth.login');
+            return redirect()->route('auth.loginPropietario');
         }
 
     }
@@ -78,9 +78,9 @@ class LoginController extends Controller
 
     public function logoutPiscicultor(){
 
-        if(session()->has('loggedPiscicultor')){
+        if(session()->has('LoggedPiscicultor')){
             session()->pull('LoggedPiscicultor');
-            return redirect()->route('auth.login');
+            return redirect()->route('auth.loginPiscicultor');
         }
 
     }

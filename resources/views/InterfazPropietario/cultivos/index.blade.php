@@ -18,7 +18,8 @@
 </ul>
 <!-- el metodo "links" sirve para paginar y mostrar los cultivos-->
 {{$Cultivo->links()}}
-<a href={{route('home')}}>Volver Home</a>
+<a href="{{route('home')}}">Volver Home</a>
+<a href="{{route('auth.logoutPropietario')}}">Logout</a>
 
 
 @endsection

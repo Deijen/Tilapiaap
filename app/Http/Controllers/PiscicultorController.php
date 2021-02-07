@@ -6,6 +6,7 @@ use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use App\Models\Cultivo;
 use App\Models\TablaAlimentacion;
+use GuzzleHttp\RetryMiddleware;
 
 class PiscicultorController extends Controller
 {
@@ -28,6 +29,8 @@ class PiscicultorController extends Controller
 
         $tablaAlimentacion = TablaAlimentacion::first();
 
+        return $tablaAlimentacion;
+
         return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
 
     }
@@ -36,7 +39,7 @@ class PiscicultorController extends Controller
 
         $tablaAlimentacion->update($request->all);
 
-        return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
+        return redirect()->route('tablaAlimentacion.show');
 
     }
 
@@ -93,6 +96,7 @@ class PiscicultorController extends Controller
      */
     public function update(Request $request, Cultivo $Cultivo)
     {
+
         $Cultivo->update($request->all());
         return  redirect()->route('piscicultor.index');
     }

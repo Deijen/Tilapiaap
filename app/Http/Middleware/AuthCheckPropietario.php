@@ -16,6 +16,11 @@ class AuthCheckPropietario
      */
     public function handle(Request $request, Closure $next)
     {
+
+        if(session()->has('LoggedPiscicultor')){
+            session()->pull('LoggedPiscicultor');
+        }
+
         if(!session()->has('LoggedPropietario') && ($request->path() != 'auth/loginPropietario')){
 
             return redirect()->route('auth.loginPropietario')->with('A donde te me vuelas :eyes: ');

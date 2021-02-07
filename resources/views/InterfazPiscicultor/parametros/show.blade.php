@@ -16,13 +16,16 @@
 <p><strong>temperatura: </strong> {{$Cultivo->temperatura}}</p>
 <p><strong>PH: </strong> {{$Cultivo->ph}}</p>
 <p><strong>Amonio: </strong> {{$Cultivo->amonio}}</p>
+<p><strong>Nitritos: </strong> {{$Cultivo->nitritos}}</p>
 <p><strong>Dioxido de carbono: </strong> {{$Cultivo->dioxidoCarbono}}</p>
 <p><strong>Fosfatos: </strong> {{$Cultivo->fosfatos}}</p>
 <p><strong>Cloruros: </strong> {{$Cultivo->cloruros}}</p>
 <p><strong>Sulfatos: </strong> {{$Cultivo->sulfatos}}</p>
 <br>
 <a href="{{route('piscicultor.edit', $Cultivo)}}">Actualizar Parametros</a>
+<br>
 <a href="{{route('tablaAlimentacion.show')}}">Ver tabla de alimentacion</a>
 <br>
+<a href="{{route('auth.logoutPiscicultor')}}">Logout</a>
 
 @endsection

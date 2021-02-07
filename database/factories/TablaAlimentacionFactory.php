@@ -23,9 +23,9 @@ class TablaAlimentacionFactory extends Factory
     {
         return [
             'id_tablaAlimentacion' => '1',
-            'Contenido Proteico' => 0,
+            'contenidoProteico' => 0,
             'Tamizado' => 0,
-            'Tamaño de particula' => 0
+            'tamañoParticula' => 0
         ];
     }
 }

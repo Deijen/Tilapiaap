@@ -26,6 +26,9 @@ Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'
 Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
 Route::get('/auth/loginPiscicultor', [LoginController::class, 'loginPiscicultor'])->name('auth.loginPiscicultor');
 Route::post('/auth/checkPiscicultor', [LoginController::class, 'checkPiscicultor'])->name('auth.checkPiscicultor');
+Route::get('/auth/logoutPropietario', [LoginController::class, 'logoutPropietario'])->name('auth.logoutPropietario');
+Route::get('/auth/logoutPiscicultor', [LoginController::class, 'logoutPiscicultor'])->name('auth.logoutPiscicultor');
+
 
 
 Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckPropietario');
