@@ -7,8 +7,9 @@
 </div>
 
 <form action="{{route('auth.checkPiscicultor')}}" method="POST">
-<!--
     @csrf
+    <!--
+   
 
     <div class="container mx-10">
         <h1></h1>

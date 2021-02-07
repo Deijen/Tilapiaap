@@ -6,8 +6,8 @@
     LOG IN PROPIETARIO
 </div>
 <form action="{{route('auth.checkPropietario')}}" method="POST">
-<!--
     @csrf
+    <!--
     <div class="container mx-10">
             Usuario: 
             <br>
