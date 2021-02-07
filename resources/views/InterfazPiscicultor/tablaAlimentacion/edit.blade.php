@@ -34,7 +34,7 @@
 
     </label>
 
-    @error('costosMantenimiento')
+    @error('Tamizado')
     <br>
     <small>*{{$message}}</small>
     <br>
@@ -48,7 +48,7 @@
         <input type="text" name="tamañoParticula" value="{{old('tamañoParticula', $tablaAlimentacion->tamañoParticula)}}">
     </label>
 
-    @error('costosMantenimiento')
+    @error('tamañoParticula')
     <br>
     <small>*{{$message}}</small>
     <br>
