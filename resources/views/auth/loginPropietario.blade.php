@@ -1,6 +1,6 @@
-@extends('layouts.plantilla2')
+@extends('layouts.judas')
 
-@section('title', 'Home')
+@section('title', 'Login Propietario')
 
 @section('content')
 <div>

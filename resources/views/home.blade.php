@@ -1,4 +1,4 @@
-@extends('layouts.plantilla2')
+@extends('layouts.judas')
 
 @section('title', 'Home')
 
@@ -12,7 +12,6 @@
     <br>
     <br>
     <div class="container mx-10">
-        <h1></h1>
         <label>
          <a href={{route('auth.loginPropietario')}}> login propietario</a>
         </label>
