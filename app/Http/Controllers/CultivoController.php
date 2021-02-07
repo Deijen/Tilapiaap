@@ -19,7 +19,7 @@ class CultivoController extends Controller
 
         $Cultivo = Cultivo::orderby('id_cultivo', 'desc')->paginate();
 
-        return view("cultivos.index", compact('Cultivo'));
+        return view("interfazPropietario.cultivos.index", compact('Cultivo'));
     }
 
     public function show(Cultivo $Cultivo){
@@ -32,14 +32,14 @@ class CultivoController extends Controller
 
        
 
-        return view('cultivos.show', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
+        return view('interfazPropietario.cultivos.show', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
     }
 
     public function edit(Cultivo $Cultivo){
 
         $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
 
-        return view('cultivos.edit', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
+        return view('interfazPropietario.cultivos.edit', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
 
     }
 
@@ -52,7 +52,7 @@ class CultivoController extends Controller
     }
 
     public function create(){
-        return view('cultivos.create');
+        return view('interfazPropietario.cultivos.create');
     }
 
 

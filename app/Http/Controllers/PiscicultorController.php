@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
 use App\Models\Cultivo;
+use App\Models\TablaAlimentacion;
 
 class PiscicultorController extends Controller
 {
@@ -19,7 +20,16 @@ class PiscicultorController extends Controller
 
         $Cultivo = Cultivo::where('id_cultivo', $data['loggedPiscicultorInfo']->cultivo_id)->first();
 
-        return view("parametros.show", compact('Cultivo',), $data );
+        return view("interfazPiscicultor.parametros.show", compact('Cultivo',), $data );
+    }
+
+
+    public function tablaShow(){
+
+        $tablaAlimentacion = TablaAlimentacion::all();
+
+        return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
+
     }
 
     /**
@@ -60,9 +70,9 @@ class PiscicultorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cultivo $Cultivo)
     {
-        //
+        return view("interfazPiscicultor.parametros.edit", compact('Cultivo'));
     }
 
     /**
@@ -72,9 +82,10 @@ class PiscicultorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cultivo $Cultivo)
     {
-        //
+        $Cultivo->update($request->all());
+        return  redirect()->route('piscicultor.index');
     }
 
     /**
@@ -88,13 +99,4 @@ class PiscicultorController extends Controller
         //
     }
 
-
-    public function mostrarIndex(Piscicultor $idPiscicultor, Cultivo $idCultivo){
-
-        if($idPiscicultor->cultivo_id == $idCultivo->id_cultivo){
-            //return redirect()->route('cultivos.show', $idCultivo); 
-            
-        }
-
-    }
 }

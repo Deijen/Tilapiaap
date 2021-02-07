@@ -22,7 +22,10 @@ class TablaAlimentacionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_tablaAlimentacion' => '1',
+            'Contenido Proteico' => 0,
+            'Tamizado' => 0,
+            'Tamaño de particula' => 0
         ];
     }
 }

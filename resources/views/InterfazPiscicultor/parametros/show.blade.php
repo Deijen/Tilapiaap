@@ -22,6 +22,7 @@
 <p><strong>Sulfatos: </strong> {{$Cultivo->sulfatos}}</p>
 <br>
 <a href="{{route('piscicultor.edit', $Cultivo)}}">Actualizar Parametros</a>
+<a href="{{route('tablaAlimentacion.show')}}">Ver tabla de alimentacion</a>
 <br>
 
 @endsection

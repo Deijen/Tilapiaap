@@ -7,8 +7,6 @@
                 </li>
                 <li><a href="{{route('cultivos.index')}}" class="{{request()->routeIs('cultivos.*') ? 'active' : '' }}">cultivos</a>
                 </li>
-                <li><a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros') ? 'active' : '' }}">Nosotros</a>
-                </li>
             </ul>
         </nav>
     </div>    

@@ -9,7 +9,7 @@ class TablaAlimentacion extends Model
 {
     use HasFactory;
 
-    protected $table = 'tablaalimentación';
+    protected $table = 'tablaalimentacion';
 
     protected $primaryKey = 'id_tablaAlimentacion';
 

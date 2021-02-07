@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Curso;
 use App\Models\Piscicultor;
 use App\Models\Propietario;
+use App\Models\TablaAlimentacion;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -24,7 +25,8 @@ class DatabaseSeeder extends Seeder
          * El factory de Piscicultor tira error. Posiblemente por las llaves foraneas
          */
        //Piscicultor::factory(10)->create();
-       Propietario::factory(1)->create();
+      Propietario::factory(1)->create();
+      TablaAlimentacion::factory(1)->create();
        
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEmpleado;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
-use App\Models\Propietario;
 use App\Models\Cultivo;
 use Illuminate\Support\Facades\DB;
 
@@ -15,17 +14,17 @@ class EmpleadoController extends Controller
 
         $Piscicultor = Piscicultor::orderby('id_piscicultor', 'desc')->paginate();
 
-        return view("piscicultor.index", compact('Piscicultor'));
+        return view("interfazPropietario.piscicultor.index", compact('Piscicultor'));
     }
 
     public function show(Piscicultor $Piscicultor){
 
-        return view('piscicultor.show', compact('Piscicultor'));
+        return view('interfazPropietario.piscicultor.show', compact('Piscicultor'));
     }
 
     public function edit(Piscicultor $Piscicultor){
 
-        return view('piscicultor.edit', compact('Piscicultor'));
+        return view('interfazPropietario.piscicultor.edit', compact('Piscicultor'));
 
     }
 
@@ -45,7 +44,7 @@ class EmpleadoController extends Controller
 
     public function create(){
         //return view('piscicultor.create');
-        return view('piscicultor.create');
+        return view('interfazPropietario.piscicultor.create');
     }
 
     public function store(StoreEmpleado $request){
@@ -84,7 +83,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor->delete();
 
-        return redirect()->route('piscicultor.index');
+        return redirect()->route('empleado.index');
 
     }
 

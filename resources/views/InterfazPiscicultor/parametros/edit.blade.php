@@ -1,13 +1,14 @@
 @extends('layouts.plantilla')
 
-@section('title', 'cultivos Create')
+@section('title', 'Parametros edit')
 
 @section('content')
-<h1>Pagina para crear cultivos</h1>
+<h1>Pagina para editar parametros</h1>
 
-<form action="{{route('cultivos.store')}}" method="post"> 
+<form action="{{route('piscicultor.update', $Cultivo)}}" method="post"> 
 
     @csrf
+    @method('put')
 
     <br>
     <label>
@@ -17,11 +18,6 @@
         
     </label>
 
-    @error('tablaAlimentacion')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-    @enderror
     <br>
     <br>
     <label>
@@ -38,32 +34,6 @@
 
     <br>
     <br>
-
-    <label>
-        Costo de mantenimiento
-        <br>
-        <input type="number" name="costosMantenimiento" value="{{old('costosMantenimiento')}}">
-    </label>
-
-    @error('costosMantenimiento')
-    <br>
-    <small>*{{$message}}</small>
-    <br>
-    @enderror
-    <br>
-    <br>
-
-    <label>
-        Intensidad
-        <br>
-        <input type="text" name="intensidad" value="{{old('intensidad')}}">
-    </label>
-
-    @error('instensidad')
-    <br>
-    <small>*{{$message}}</small>
-    <br>
-    @enderror
 
     <br>
     <br>
@@ -87,7 +57,7 @@
     <!-------------------------------------------->
 
     <label>
-        Oxigeno (ppm)
+        Oxigeno (ppm) (Optimo > 4.5)
         <br>
         <input type="number" name="oxigeno" value="{{old('oxigeno')}}">
     </label>
@@ -101,7 +71,7 @@
     <br>
     <br>
     <label>
-        Temperatura (Centigrados)
+        Temperatura (Centigrados) (32 > Optimo > 28)
         <br>
         <input type="number" name="temperatura" value="{{old('temperatura')}}">
     </label>
@@ -115,7 +85,7 @@
     <br>
     <br>
     <label>
-        PH 
+        PH (9 > Optimo > 6.5)
         <br>
         <input type="number" name="ph" value="{{old('ph')}}">
     </label>
@@ -129,7 +99,7 @@
     <br>
     <br>
     <label>
-        Amonio (ppm)
+        Amonio (ppm) (2 > Optimo > 0.6)
         <br>
         <input type="number" name="amonio" value="{{old('amonio')}}">
     </label>
@@ -143,7 +113,7 @@
     <br>
     <br>
     <label>
-        Nitritos (ppm)
+        Nitritos (ppm) (0.1 > Optimo)
         <br>
         <input type="number" name="nitritos" value="{{old('nitritos')}}">
     </label>
@@ -157,7 +127,7 @@
     <br>
     <br>
     <label>
-        Dioxido de carbono (ppm)
+        Dioxido de carbono (ppm) (20 > Optimo)
         <br>
         <input type="number" name="dioxidoCarbono" value="{{old('dioxidoCarbono')}}">
     </label>
@@ -171,7 +141,7 @@
     <br>
     <br>
     <label>
-        Fosfatos (ppm)
+        Fosfatos (ppm) (1.5 > Optimo > 0.6)
         <br>
         <input type="number" name="fosfatos" value="{{old('fosfatos')}}">
     </label>
@@ -185,7 +155,7 @@
     <br>
     <br>
     <label>
-        Cloruros (ppm)
+        Cloruros (ppm) (10 > Optimo) 
         <br>
         <input type="number" name="cloruros" value="{{old('cloruros')}}">
     </label>
@@ -199,7 +169,7 @@
     <br>
     <br>
     <label>
-        Sulfatos (ppm)
+        Sulfatos (ppm) (18 > Optimo)
         <br>
         <input type="number" name="sulfatos" value="{{old('sulfatos')}}">
     </label>
