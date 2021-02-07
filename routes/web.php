@@ -22,7 +22,9 @@ use App\Http\Controllers\PiscicultorController;
 
 Route::get('/', HomeController::class)->name('home'); 
 
-Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show');
+Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show')->middleware('AuthCheckPiscicultor');
+
+Route::get('generate-pdf/{cultivo}', [CultivoController::class, 'generatePDF'])->name('informe.show');
 
 Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
 Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
@@ -36,7 +38,6 @@ Route::get('/auth/logoutPiscicultor', [LoginController::class, 'logoutPisciculto
 Route::resource('cultivos', CultivoController::class)->middleware('AuthCheckPropietario');
 
 Route::resource('empleados', EmpleadoController::class)->parameters(['empleados' => 'Piscicultor'])->middleware('AuthCheckPropietario');
-
 
 Route::group(['middleware' => 'AuthCheckPiscicultor'], function() {
 

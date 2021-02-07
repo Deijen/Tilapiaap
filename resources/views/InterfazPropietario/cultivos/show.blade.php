@@ -20,6 +20,8 @@
 <a href="{{route('cultivos.edit', $Cultivo)}}">Editar Cultivo</a>
 <br>
 <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+<br>
+<a href="{{route('informe.show', $Cultivo)}}">Descargar informe</a>
 
 <form action="{{route('cultivos.destroy' , $Cultivo)}}" method="POST">
 
