@@ -1,4 +1,4 @@
-@extends('layouts.judas')
+@extends('layouts.index')
 
 @section('title', 'Login Propietario')
 

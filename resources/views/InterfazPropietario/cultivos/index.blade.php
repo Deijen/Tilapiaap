@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.index')
 
 @section('title', 'cultivos')
 
