@@ -3,7 +3,7 @@
 @section('title', 'cultivos Create' )
 
 @section('content')
-<h1>Pagina para crear piscicultores (id del propietario: )</h1>
+<h1>Pagina para crear piscicultores</h1>
 
 
     <!--por medio del método 'store', empleado por la ruta 'empleados' toda la información 
@@ -62,7 +62,7 @@
         <br>
 
         <label>
-            Correo11. 
+            Correo. 
             <br>
             <input type="text" name="correo" value="{{old('correo')}}">
         </label>

@@ -22,7 +22,7 @@
         <label>
             Contraseña:
             <br>
-            <input type="text" name="password" class="border-2 border-black">
+            <input type="password" name="password" class="border-2 border-black">
         </label>
         <br>
         <br>
