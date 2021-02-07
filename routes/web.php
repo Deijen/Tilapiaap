@@ -36,6 +36,10 @@ Route::resource('piscicultor', PiscicultorController::class)->parameters(['pisci
 
 Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show');
 
+Route::get('piscicultor/tablaAlimentacion/edit/{tablaAlimentacion}', [PiscicultorController::class, 'tablaEdit'])->name('tablaAlimentacion.edit');
+
+Route::post('piscicultor/tablaAlimentacion/update/{tablaAlimentacion}', [PiscicultorController::class, 'tablaUpdate'])->name('tablaAlimentacion.update');
+
 ////////////////
 /**
  * Ruta para asignar piscicultores

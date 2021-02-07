@@ -15,9 +15,9 @@ class CreateTablaAlimentacionTable extends Migration
     {
         Schema::create('tablaAlimentacion', function (Blueprint $table) {
             $table->bigIncrements('id_tablaAlimentacion'); //llave primaria
-            $table->double('Contenido Proteico')->nullable();
+            $table->double('contenidoProteico')->nullable();
             $table->integer('Tamizado')->nullable();
-            $table->double('Tamaño de particula')->nullable();
+            $table->double('tamañoParticula')->nullable();
             
             $table->timestamps();
             

@@ -26,11 +26,20 @@ class PiscicultorController extends Controller
 
     public function tablaShow(){
 
-        $tablaAlimentacion = TablaAlimentacion::all();
+        $tablaAlimentacion = TablaAlimentacion::first();
 
         return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
 
     }
+
+    public function tablaUpdate(Request $request, TablaAlimentacion $tablaAlimentacion){
+
+        $tablaAlimentacion->update($request->all);
+
+        return view("interfazPiscicultor.tablaAlimentacion.show", compact('tablaAlimentacion'));
+
+    }
+
 
     /**
      * Show the form for creating a new resource.

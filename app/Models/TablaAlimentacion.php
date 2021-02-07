@@ -14,10 +14,9 @@ class TablaAlimentacion extends Model
     protected $primaryKey = 'id_tablaAlimentacion';
 
     protected $fillable = [
-        'id_piscicultor',
-        'Contenido proteico',
+        'contenidoProteico',
         'Tamizado',
-        'Tamaño de particula'
+        'tamañoParticula'
         
        
     ];
