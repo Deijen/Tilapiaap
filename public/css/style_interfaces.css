@@ -161,3 +161,9 @@ body{
 .formulario_piscicultor a:hover{
     color: #FFF;
 }
+
+.item{
+    margin: 1px;
+    padding: 1px;
+    float: left;
+}
