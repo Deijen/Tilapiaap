@@ -49,8 +49,8 @@ body{
 
 .intefarz_usuario{
     margin: 20px;
-    width: 70%;
-    height: 70%;
+    width: 1600px;
+    height: 500px;
     background: #12203E;
     color: #FFF;
     top: 65%;
@@ -160,4 +160,10 @@ body{
 
 .formulario_piscicultor a:hover{
     color: #FFF;
+}
+
+.item{
+    margin: 1px;
+    padding: 1px;
+    float: left;
 }

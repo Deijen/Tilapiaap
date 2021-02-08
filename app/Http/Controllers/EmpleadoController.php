@@ -83,7 +83,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor->delete();
 
-        return redirect()->route('empleado.index');
+        return redirect()->route('cultivos.index');
 
     }
 

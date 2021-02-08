@@ -1,4 +1,4 @@
-@extends('layouts.plantilla2')
+@extends('layouts.interfaces')
 
 @section('title', 'Tabla de Alimentacion')  
 
