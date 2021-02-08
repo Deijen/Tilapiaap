@@ -1,11 +1,13 @@
-@extends('layouts.plantilla')
+@extends('layouts.interfaces')
 
-@section('title', 'Emmpleados edit')
+@section('title', 'Empleados edit')
 
 @section('content')
-<h1>Pagina  para editar empleados</h1>
+<div class="name_page">
+    Pagina  para editar empleados
+</div>
 <br>
-
+<div class="propiedades_cultivo">
 <!--Se indica que empleado se va a editar-->
 <h1> <strong> Id del empleado a editar: {{$Piscicultor->id_piscicultor}}</strong> </h1>
 <br>
@@ -30,7 +32,7 @@
     @enderror
 
     <br>
-
+    <br>
     <label>
         Salario:
         <br>
@@ -42,6 +44,7 @@
     <small>*{{$message}}</small>
     <br>
     @enderror
+    <br>
     <br>
     <label>
         Correo:
@@ -77,4 +80,5 @@
 
 </form>
 <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+</div>
 @endsection

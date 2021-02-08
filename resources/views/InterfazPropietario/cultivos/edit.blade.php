@@ -1,73 +1,75 @@
-@extends('layouts.plantilla')
+@extends('layouts.interfaces')
 
 @section('title', 'Cultivos edit')
 
 @section('content')
-<h1>Pagina para editar Cultivos</h1>
+<div class="name_page">
+    Pagina para editar Cultivos
+</div>
 <br>
 
-<!--Se indica que cultivo se va a editar-->
-<h1> <strong> Id del cultivo a editar: {{$Cultivo->id_cultivo}}</strong> </h1>
-<br>
+<div class="propiedades_cultivo">
+    <!--Se indica que cultivo se va a editar-->
+    <h2><strong> Id del cultivo a editar: {{$Cultivo->id_cultivo}}</strong></h2>
 
 
-<!--cultivo.update ,manda los datos del formulario-->
-<form action="{{route('cultivos.update', $Cultivo)}}" method="post"> 
+    <!--cultivo.update ,manda los datos del formulario-->
+    <form action="{{route('cultivos.update', $Cultivo)}}" method="post"> 
 
-    @csrf
-    @method('put')
+        @csrf
+        @method('put')
 
-    <label>
-       
-        <br>
-    <table>
-        <tr> 
-            <td> Piscicultores disponibles para asignar:</td>
-           
-        </tr>
+        <label>
+        <table>
+            <tr> 
+                <td> Piscicultores disponibles para asignar:</td>
+            </tr>
+            
+            <tr>
+            @foreach ($piscicultores as $piscicultor)
+            <td> <li>{{$piscicultor->Nombre}}</li>  </td>
+            <td> <strong> <a href="{{route('asignarEmpleado',  [$piscicultor->id_piscicultor, $Cultivo->id_cultivo])}}"> asignar al cultivo</a> </strong></td>
+            </tr>
+            @endforeach
         
-        <tr>
-        @foreach ($piscicultores as $piscicultor)
-        <td> <li>{{$piscicultor->Nombre}}</li>  </td>
-        <td> <strong> <a href="{{route('asignarEmpleado',  [$piscicultor->id_piscicultor, $Cultivo->id_cultivo])}}"> asignar al cultivo</a> </strong></td>
-        </tr>
-        @endforeach
-    
+            <br>
+        
+
+        </table>
+        </label>
+
+        @error('Piscicultor')
         <br>
-       
-
-    </table>
-    </label>
-
-    @error('Piscicultor')
-    <br>
-    <small>*{{$message}}</small>
-    <br>
-    @enderror
-
-    <br>
-    
-
-    
-
-    <br>
-    <label>
-        Costo de mantenimiento :
+        <small>*{{$message}}</small>
         <br>
-        <input type="number" name="costosMantenimiento" value="{{old('costosMantenimiento', $Cultivo->costosMantenimiento)}}">
-    </label>
+        @enderror
 
-    @error('costosMantenimiento')
+        <br>
+        
+
+        
+
+        <br>
+        <label>
+            Costo de mantenimiento :
+            <br>
+            <input type="number" name="costosMantenimiento" value="{{old('costosMantenimiento', $Cultivo->costosMantenimiento)}}">
+            <br>
+        </label>
+
+        @error('costosMantenimiento')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+        @enderror
+
+        <br>
+
+        
+        <button type="submit">Actualizar formulario</button>
+
+    </form>
     <br>
-    <small>*{{$message}}</small>
-    <br>
-    @enderror
-
-    <br>
-
-    
-    <button type="submit">Actualizar formulario</button>
-
-</form>
-<a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+    <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+</div>
 @endsection
