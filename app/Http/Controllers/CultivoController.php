@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Requests\StoreCultivo;
 use App\Models\Cultivo;
 use App\Models\Piscicultor;
 use Illuminate\Http\Request;
@@ -24,7 +24,13 @@ class CultivoController extends Controller
 
     public function show(Cultivo $Cultivo){
 
+       // $piscicultores = Piscicultor::all();
+
+        //$piscicultores = DB::select('select * from piscicultor where id_cultivo = $Cultivo = id_cultivo');
+
         $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , $Cultivo->id_cultivo)->get();
+
+       
 
         return view('interfazPropietario.cultivos.show', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
     }
@@ -38,12 +44,6 @@ class CultivoController extends Controller
     }
 
     public function update(Request $request,Cultivo $Cultivo){
-
-        $request->validate([
-
-            'costosMantenimiento'=>'integer|min:0'
-
-        ]);
 
         $Cultivo->update($request->all());
 
@@ -64,9 +64,6 @@ class CultivoController extends Controller
     public function store(){
 
         $Cultivo = Cultivo::create();
-
-        $Cultivo->intensidad = 'Extensivo';
-        $Cultivo->save();
 
         return redirect()->route('cultivos.index'); 
             
