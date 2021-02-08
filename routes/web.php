@@ -22,9 +22,11 @@ use App\Http\Controllers\PiscicultorController;
 
 Route::get('/', HomeController::class)->name('home'); 
 
-Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show')->middleware('AuthCheckPiscicultor');
 
-Route::get('generate-pdf/{cultivo}', [CultivoController::class, 'generatePDF'])->name('informe.show');
+
+/* 
+Rutas para la autenticacion de usuarios
+*/
 
 Route::get('/auth/loginPropietario', [LoginController::class, 'loginPropietario'])->name('auth.loginPropietario');
 Route::post('/auth/checkPropietario', [LoginController::class, 'checkPropietario'])->name('auth.checkPropietario');
@@ -32,6 +34,18 @@ Route::get('/auth/loginPiscicultor', [LoginController::class, 'loginPiscicultor'
 Route::post('/auth/checkPiscicultor', [LoginController::class, 'checkPiscicultor'])->name('auth.checkPiscicultor');
 Route::get('/auth/logoutPropietario', [LoginController::class, 'logoutPropietario'])->name('auth.logoutPropietario');
 Route::get('/auth/logoutPiscicultor', [LoginController::class, 'logoutPiscicultor'])->name('auth.logoutPiscicultor');
+
+/*
+Ruta para mostrar la tabla de alimentacion
+ */
+Route::get('piscicultor/tablaAlimentacion', [PiscicultorController::class, 'tablaShow'])->name('tablaAlimentacion.show')->middleware('AuthCheckPiscicultor');
+
+/*
+Ruta para generar el informe en pdf
+ */
+Route::get('generate-pdf/{cultivo}', [CultivoController::class, 'generatePDF'])->name('informe.show');
+
+
 
 
 
@@ -52,6 +66,7 @@ Route::post('piscicultor/tablaAlimentacion/update/{tablaAlimentacion}', [Piscicu
  * Ruta para asignar piscicultores
  */
 Route::get('empleado/{id_piscicultor}/cultivo/{id_cultivo}', [EmpleadoController::class, 'asignarPiscicultor'])->name('asignarEmpleado');
+
 
 ////////////////
 /**

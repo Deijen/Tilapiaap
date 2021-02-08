@@ -1,95 +1,74 @@
-@extends('layouts.plantilla')
+@extends('layouts.interfaces')
 
 @section('title', 'cultivos Create' )
 
 @section('content')
-<h1>Pagina para crear piscicultores (id del propietario: )</h1>
+<div class="name_interfaz">
+    Crear piscicultor
+</div>
 
 
     <!--por medio del método 'store', empleado por la ruta 'empleados' toda la información 
     del formulario se envia a través del metodo-->
     <form action="{{route('empleados.store')}}" method="post"> 
-
         @csrf
-    
+        <div class="formulario_piscicultor">
+            <!-------------------------------------------------------------------->
+            <img class="avatar" src="/img/Piscicultor.png">
+            <label for="Id_piscicultor">Id del piscicultor:</label>
+            <input type="text" name='id_piscicultor' value="{{old('id_piscicultor')}}" placeholder="ID Piscicultor">
+
+            @error('id_piscicultor')
+                <br>
+                <small>*{{$message}}</small>
+                <br>
+            @enderror
+            <!-------------------------------------------------------------------->
+
+            <!-------------------------------------------------------------------->
+            <label for="name">Nombre del piscicultor:</label>
+            <input type="text" name='Nombre' value="{{old('Nombre')}}" placeholder="Nombre">
         
-    
-        <br>
-        <!-------------------------------------------------------------------->
-        <label>
-            Id del piscicultor:  (Trabajar con la cedula) 
-            <br>
-            <input type="text" name='id_piscicultor' value="{{old('id_piscicultor')}}" >
-         </label>
+            @error('Nombre')
+                <br>
+                <small>*{{$message}}</small>
+                <br>
+            @enderror
+            <!-------------------------------------------------------------------->
 
-         @error('id_piscicultor')
-            <br>
-            <small>*{{$message}}</small>
-            <br>
-        @enderror
-         <!-------------------------------------------------------------------->
-         <br>
-
-         <!-------------------------------------------------------------------->
-        <label>
-           Nombre del piscicultor: 
-           <br>
-           <input type="text" name='Nombre' value="{{old('Nombre')}}" >
-        </label>
-    
-        @error('Nombre')
+            <label for="salario">Salario:</label>
+            <input type="text" name="salario" value="{{old('salario')}}" placeholder="Salario">
+        
+            @error('salario')
             <br>
             <small>*{{$message}}</small>
             <br>
-        @enderror
-        <!-------------------------------------------------------------------->
+            @enderror
+            <!-------------------------------------------------------------------->
 
+            <label for="email">Correo:</label>
+            <input type="text" name="correo" value="{{old('correo')}}" placeholder="E-Mail">
 
-        <br>
-        <label>
-            Salario (a convenir):
+            @error('correo')
             <br>
-            <input type="text" name="salario" value="{{old('salario')}}">
-        </label>
-    
-        @error('salario')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-        @enderror
-        <!-------------------------------------------------------------------->
-
-        <br>
-
-        <label>
-            Correo11. 
+            <small>*{{$message}}</small>
             <br>
-            <input type="text" name="correo" value="{{old('correo')}}">
-        </label>
-        @error('correo')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-        @enderror
-         <!-------------------------------------------------------------------->
+            @enderror
+            <!-------------------------------------------------------------------->
 
-         <br>
-         <label>
-            Contraseña. 
+            <label for="password">Contraseña.</label>
+            <input type="password" name="password" value="{{old('password')}}" placeholder="Password">
+
+            @error('password')
             <br>
-            <input type="text" name="password" value="{{old('password')}}">
-        </label>
-        @error('password')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-        @enderror
-        <br>
-
-
-
-        <button type="submit">Enviar formulario</button>
-    
+            <small>*{{$message}}</small>
+            <br>
+            @enderror
+            
+            <input class="create" type="submit" value="Enviar formulario"></button>
+            <br>
+            <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+        </div>
+        
     </form>
-    <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
     @endsection

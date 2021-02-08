@@ -36,6 +36,12 @@ class PiscicultorController extends Controller
 
     public function tablaUpdate(Request $request, TablaAlimentacion $tablaAlimentacion){
 
+        $request->validate([
+            'contenidoProteico' => 'required|integer|min:0',
+            'Tamizado' => 'required',
+            'tamañoParticula' => 'required|integer|min:0'
+        ]);
+
         $tablaAlimentacion->update($request->all);
 
         return redirect()->route('tablaAlimentacion.show');
@@ -101,6 +107,19 @@ class PiscicultorController extends Controller
      */
     public function update(Request $request, Cultivo $Cultivo)
     {
+        $request->validate([
+            'cantidadTilapias' => 'required|integer|min:0',
+            'estado' => 'required',
+            'oxigeno' => 'required|integer|min:0',
+            'temperatura' => 'required|integer|min:1|max:99',
+            'ph' => 'required|integer|min:0',
+            'amonio' => 'required|integer|min:0',
+            'nitritos' => 'required|integer|min:0',
+            'dioxidoCarbono' => 'required|integer|min:0',
+            'fosfatos' => 'required|integer|min:0',
+            'cloruros' => 'required|integer|min:0',
+            'sulfatos' => 'required|integer|min:0',
+        ]);
 
         $Cultivo->update($request->all());
         return  redirect()->route('piscicultor.index');

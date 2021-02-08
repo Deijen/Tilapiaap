@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    font-family: 'Source Serif Pro', serif;
+}
+
+body{
+    background: #e9ecf4;
+    color: #000;
+}
+
+.contenedor{
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .footer{
+    background: #FFF;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contenedor .header{
+    background: #12203E;
+    color: #EEE;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.contenedor .contenido{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: span 2;
+    height: 600px;
+    font-size: 10px;
+}
+
+.contenedor .footer{
+    background: #12203e;
+    color: #FFF;
+    grid-column: span 3;
+}
+
+.intefarz_usuario{
+    margin: 20px;
+    width: 1600px;
+    height: 550px;
+    background: #12203E;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -60%);
+    box-sizing: border-box;
+    padding: 20px 30px 20px 30px;
+    border-radius: 15px;
+}
+
+.intefarz_usuario a{
+    color: darkgray;
+}
+
+.intefarz_usuario a:hover{
+    color: #FFF;
+}
+
+.intefarz_usuario input[type="submit"]{
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #FFF;
+    border-radius: 5px;
+    color: #12203E;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.intefarz_usuario input[type="submit"]:hover{
+    border-color: #FFF;
+    background: #3a62b8;
+    color: #FFF;
+}
+
+.formulario_piscicultor{
+    width: 500px;
+    height: 500px;
+    background: #12203E;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-45%, -50%);
+    box-sizing: border-box;
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.formulario_piscicultor .avatar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.formulario_piscicultor label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.formulario_piscicultor input{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.formulario_piscicultor input[type="text"],
+.formulario_piscicultor input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #FFF;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.formulario_piscicultor input[type="submit"]{
+    height: 35px;
+    width: 50%;
+    border: none;
+    outline: none;
+    background: #FFF;
+    border-radius: 15px;
+    color: #12203E;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.formulario_piscicultor input[type="submit"]:hover{
+    border-color: #FFF;
+    background: #3a62b8;
+    color: #FFF;
+}
+
+.formulario_piscicultor a{
+    text-decoration: none;
+    font-size: 25px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.formulario_piscicultor a:hover{
+    color: #FFF;
+}

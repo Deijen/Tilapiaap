@@ -184,7 +184,7 @@
     <button type="submit">Enviar formulario</button>
 
 </form>
-    <a href="{{route('cultivos.index')}}">Volver a Cultivos</a>
+    <a href="{{route('piscicultor.index')}}">Volver al cultivo</a>
     @endsection
 
 

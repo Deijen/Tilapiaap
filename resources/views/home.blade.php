@@ -1,24 +1,25 @@
-@extends('layouts.index')
+@extends('layouts.base')
 
 @section('title', 'Home')
 
 @section('content')
-<div>
-    <p>LOGIN HERE</p>
-    <br>
+<div class="name_page">
+    INICIO DE SESIÓN
 </div>
-    <div class="container mx-10">
-        <label>
-            <a href={{route('auth.loginPropietario')}}> <i id="yep" class="fas fa-user-tie"></i>  </a>
-        </label>
-        <br>
-        <br>
-        <label>
-          <a href="{{route('auth.loginPiscicultor')}}"> <i id="yep" class="fas fa-user-alt"></i></a>
-        </label>
-        <br>
-        <br>
+<div class="users">
+    <figure>
+        <a href={{route('auth.loginPropietario')}}><i class="fas fa-user-tie"></i></a>
+        <figcaption>
+            Propietario
+        </figcaption>
+    </figure>
 
-    </div>
+    <figure>
+        <a href="{{route('auth.loginPiscicultor')}}"> <i class="fas fa-user-alt"></i></a>
+        <figcaption>
+            Piscicultor
+        </figcaption>
+    </figure>
+</div>
 
 @endsection

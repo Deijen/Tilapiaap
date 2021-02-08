@@ -19,6 +19,13 @@ class LoginController extends Controller
 
     public function checkPropietario(Request $request){
 
+        $request->validate([
+
+            'correo'=>'required|email',
+            'password' => 'required'
+
+        ]); 
+
         $userInfo = Propietario::where('correo', $request->correo)->first();
 
         if(!$userInfo){
@@ -56,6 +63,13 @@ class LoginController extends Controller
 
 
     public function checkPiscicultor(Request $request){
+
+        $request->validate([
+
+            'correo'=>'required|email',
+            'password' => 'required'
+
+        ]);
 
         $userInfo = Piscicultor::where('correo', $request->correo)->first();
 
