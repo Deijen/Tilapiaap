@@ -23,7 +23,7 @@ class AuthCheckPiscicultor
 
         if(!session()->has('LoggedPiscicultor') && ($request->path() != '/auth/loginPiscicultor' )){
 
-            return redirect()->route('auth/loginPiscicultor')->with('A donde te me vuelas :eyes: ');
+            return redirect()->route('auth.loginPiscicultor')->with('A donde te me vuelas :eyes: ');
 
         }
 
@@ -33,6 +33,8 @@ class AuthCheckPiscicultor
 
         }
 
-        return $next($request);
+        return $next($request)->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+                              ->header('Pragma', 'no-cache')
+                              ->header('Expires', 'Sat 01 Jan 1990 00:00:00');
     }
 }

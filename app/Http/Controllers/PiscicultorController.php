@@ -41,7 +41,7 @@ class PiscicultorController extends Controller
             'tamañoParticula' => 'required|integer|min:0'
         ]);
 
-        $tablaAlimentacion->update($request->all);
+        $tablaAlimentacion->update($request->all());
 
         return redirect()->route('tablaAlimentacion.show');
 
