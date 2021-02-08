@@ -40,17 +40,6 @@ body{
     height: 600px;
 }
 
-.contenedor .widget-1,
-.contenedor .widget-2{
-    background: #55a8fd;
-    color: #FFF;
-    height: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .contenedor .footer{
     background: #12203e;
     color: #FFF;
@@ -108,8 +97,8 @@ figure:hover figcaption{
 }
 
 .formulario_login{
-    width: 400px;
-    height: 420px;
+    width: 30%;
+    height: 50%;
     background: #12203E;
     color: #FFF;
     top: 50%;
@@ -180,4 +169,3 @@ figure:hover figcaption{
 .formulario_login a:hover{
     color: #FFF;
 }
-
