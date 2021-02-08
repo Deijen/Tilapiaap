@@ -55,7 +55,7 @@ class EmpleadoController extends Controller
 
         $Piscicultor = Piscicultor::create($request->all());
         
-        return redirect()->route('empleados.show', $Piscicultor); 
+        return redirect()->route('empleados.show', $Piscicultor);  
         
 
     }

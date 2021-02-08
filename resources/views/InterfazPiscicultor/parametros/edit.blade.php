@@ -12,13 +12,6 @@
     @csrf
     @method('put')
 
-    <label>
-        <!--La tabla de alimentación debe ser un link. Quitar el input. No va en la creacion de cultivos del propietario-->
-        <a href="">Tabla de Alimentacion:</a>
-        <br>
-        
-    </label>
-
     <div class="items">
         <label>
             Cantidad de tilapias
