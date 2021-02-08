@@ -13,6 +13,7 @@
 <br>
 <a href="{{route('tablaAlimentacion.edit', $tablaAlimentacion)}}">Actualizar tabla de alimentacion</a>
 <br>
+<a href="{{route('piscicultor.index')}}">Volver</a>
 
 @endsection
 

@@ -5,6 +5,7 @@
 <div class="name_page">
     LOG IN PROPIETARIO
 </div>
+
 <form action="{{route('auth.checkPropietario')}}" method="POST">
     @csrf
     <div class="formulario_login">
