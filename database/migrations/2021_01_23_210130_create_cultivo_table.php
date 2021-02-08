@@ -20,18 +20,18 @@ class CreateCultivoTable extends Migration
             $table->unsignedBigInteger('tablaAlimentacion_id')->nullable(); //
             $table->foreign('tablaAlimentacion_id')->references('id_tablaAlimentacion')->on('tablaAlimentacion')->nullable();
             $table->integer('cantidadTilapias')->nullable();
-            $table->integer('costosMantenimiento')->nullable();
+            $table->double('costosMantenimiento')->nullable();
             $table->string('intensidad')->nullable();
             $table->string('estado')->nullable();
-            $table->integer('oxigeno')->nullable();
-            $table->integer('temperatura')->nullable();
-            $table->integer('ph')->nullable();
-            $table->integer('amonio')->nullable();
-            $table->integer('nitritos')->nullable();
-            $table->integer('dioxidoCarbono')->nullable();
-            $table->integer('fosfatos')->nullable();
-            $table->integer('cloruros')->nullable();
-            $table->integer('sulfatos')->nullable();
+            $table->double('oxigeno')->nullable();
+            $table->double('temperatura')->nullable();
+            $table->double('ph')->nullable();
+            $table->double('amonio')->nullable();
+            $table->double('nitritos')->nullable();
+            $table->double('dioxidoCarbono')->nullable();
+            $table->double('fosfatos')->nullable();
+            $table->double('cloruros')->nullable();
+            $table->double('sulfatos')->nullable();
             $table->timestamps();
         });
     }

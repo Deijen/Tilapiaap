@@ -21,13 +21,13 @@ class AuthCheckPiscicultor
             session()->pull('LoggedPropietario');
         }
 
-        if(!session()->has('LoggedPiscicultor') && ($request->path() != '/auth/loginPiscicultor' )){
+        if(!session()->has('LoggedPiscicultor') && ($request->path() != 'auth.loginPiscicultor' )){
 
-            return redirect()->route('auth.loginPiscicultor')->with('A donde te me vuelas :eyes: ');
+            return redirect()->route('auth.loginPiscicultor');
 
         }
 
-        if(session()->has('LoggedPiscicultor') && ($request->path() == '/auth/loginPiscicultor' )){
+        if(session()->has('LoggedPiscicultor') && ($request->path() == 'auth.loginPiscicultor' )){
 
             return back();
 

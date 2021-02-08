@@ -73,7 +73,7 @@ class EmpleadoController extends Controller
 
        // $Piscicultor = DB::table('piscicultor')->where('propietario_id', null)->update(['propietario_id' => 1]);
         
-        return redirect()->route('empleados.show', $Piscicultor); 
+        return redirect()->route('empleados.show', $Piscicultor);  
         
 
     }
