@@ -22,7 +22,7 @@
         @csrf
         @method('delete')
         <br>
-        <button type="submit" class="border-2 border-black">Eliminar Cultivo</button>
+        <button type="submit" class="border-2 border-black">Eliminar Piscicultor</button>
     </form>
 </div>
 @endsection

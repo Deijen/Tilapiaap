@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.interfaces')
 
 @section('title', 'Tabla de alimentacion edit')
 
@@ -8,7 +8,7 @@
 
 <!--cultivo.update ,manda los datos del formulario-->
 <form action="{{route('tablaAlimentacion.update', $tablaAlimentacion)}}" method="post"> 
-
+    @csrf
     <br>
     <label>
         Contenido Proteico :
