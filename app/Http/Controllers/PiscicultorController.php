@@ -107,17 +107,17 @@ class PiscicultorController extends Controller
     public function update(Request $request, Cultivo $Cultivo)
     {
         $request->validate([
-            'cantidadTilapias' => 'required|min:0',
+            'cantidadTilapias' => 'required|min:0|numeric',
             'estado' => 'required',
-            'oxigeno' => 'required|min:0',
-            'temperatura' => 'required|min:1|max:99',
-            'ph' => 'required|min:0',
-            'amonio' => 'required|min:0',
-            'nitritos' => 'required|min:0',
-            'dioxidoCarbono' => 'required|min:0',
-            'fosfatos' => 'required|min:0',
-            'cloruros' => 'required|min:0',
-            'sulfatos' => 'required|min:0',
+            'oxigeno' => 'required|min:0|numeric',
+            'temperatura' => 'required|min:1|max:99|numeric',
+            'ph' => 'required|min:0|numeric',
+            'amonio' => 'required|min:0|numeric',
+            'nitritos' => 'required|min:0|numeric',
+            'dioxidoCarbono' => 'required|min:0|numeric',
+            'fosfatos' => 'required|min:0|numeric',
+            'cloruros' => 'required|min:0|numeric',
+            'sulfatos' => 'required|min:0|numeric',
         ]);
 
         $Cultivo->update($request->all());
