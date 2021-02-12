@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>INFOME</title>
+    <title>INFOME CULTIVO {{$Cultivo->id_cultivo}}</title>
 </head>
 <body>
-    <h1>{{ $title }}</h1>
+    <h1>INFOME CULTIVO {{$Cultivo->id_cultivo}}</h1>
     <p>{{ $date }}</p>
     <p><strong>Cantidad de tilapias: </strong> {{$Cultivo->cantidadTilapias}}</p>
     <p><strong>Intensidad: </strong> {{$Cultivo->intensidad}} </p>
