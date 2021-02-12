@@ -85,6 +85,9 @@ class CultivoController extends Controller
 
     public function generatePDF(Cultivo $Cultivo)
     {
+
+        date_default_timezone_set("America/Bogota");
+
         $date = date(now());
 
         $data = [
