@@ -10,7 +10,10 @@ use Illuminate\Support\Facades\DB;
 use PDF;
 
 class CultivoController extends Controller
-{
+{   
+    /**
+     * Función que, estando dentro de la interfaz del propietario, permite mostrar los cultivos
+     */
     public function index(){
         /**
          * NOTA: Para pasar variables se hace por el método compact. 
@@ -22,6 +25,10 @@ class CultivoController extends Controller
         return view("interfazPropietario.cultivos.index", compact('Cultivo'));
     }
 
+
+    /**
+     * Función para mostrar los cultivos desde la interfaz del propietario.
+     */
     public function show(Cultivo $Cultivo){
 
        // $piscicultores = Piscicultor::all();
@@ -35,6 +42,7 @@ class CultivoController extends Controller
         return view('interfazPropietario.cultivos.show', compact('Cultivo') , [ 'piscicultores' => $piscicultores]);
     }
 
+    //función para editar los cultivos
     public function edit(Cultivo $Cultivo){
 
         $piscicultores = DB::table('piscicultor')->where('cultivo_id', '=' , NULL)->get();
@@ -43,6 +51,7 @@ class CultivoController extends Controller
 
     }
 
+    //Función para actualizar los cultivos
     public function update(Request $request,Cultivo $Cultivo){
 
         $Cultivo->update($request->all());
@@ -51,6 +60,7 @@ class CultivoController extends Controller
 
     }
 
+    //función para crear cultivos
     public function create(){
         return view('interfazPropietario.cultivos.create');
     }
@@ -64,12 +74,15 @@ class CultivoController extends Controller
     public function store(){
 
         $Cultivo = Cultivo::create();
+        $Cultivo->intensidad = 'Extensivo';
+        $Cultivo->save();
 
         return redirect()->route('cultivos.index'); 
             
     }
 
 
+    //Función para eliminar un cultivo
     public function destroy(Cultivo $Cultivo){
 
         Piscicultor::where('cultivo_id', $Cultivo->id_cultivo)->update(['cultivo_id' => NULL]);
@@ -80,6 +93,7 @@ class CultivoController extends Controller
 
     } 
 
+    //Función para generar el PDF
     public function generatePDF(Cultivo $Cultivo)
     {
 

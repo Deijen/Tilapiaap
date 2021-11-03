@@ -6,7 +6,7 @@
     LOG IN PISCICULTOR
 </div>
 
-<form action="{{route('auth.checkPiscicultor')}}" method="POST">
+<form action="{{route('auth.checkPiscicultor')}}" method="POST"> <!--Esta ruta hace uso de la función "chekPiscicultor" que se encuentra en el "LoginController"-->
     @csrf
     <div class="formulario_login">
         <img class="avatar" src="/img/Piscicultor.png">

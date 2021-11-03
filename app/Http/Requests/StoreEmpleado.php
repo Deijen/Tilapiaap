@@ -24,7 +24,7 @@ class StoreEmpleado extends FormRequest
     public function rules()
     {
         return [
-            'id_piscicultor' => 'required|integer',
+            'id_piscicultor' => 'min:0|required|integer',
             'Nombre' => 'required',
             'salario' => 'required|integer|min:0',
             'correo' => 'required|email',

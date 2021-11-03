@@ -16,6 +16,11 @@ class PiscicultorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Función que, una vez válidado el piscicultor, lo envía a la vista "InterfazPiscicultor.parametros.show". 
+     * Esta función mostrará la Id del cultivo asociado al pisicultor
+     */
     public function index()
     {
         $data = ['loggedPiscicultorInfo'=>Piscicultor::where('id_piscicultor', session('LoggedPiscicultor'))->first()];
@@ -25,7 +30,9 @@ class PiscicultorController extends Controller
         return view("InterfazPiscicultor.parametros.show", compact('Cultivo',), $data );
     }
 
-
+    /**
+     * Función para mostrar la tabla de alimentación
+     */
     public function tablaShow(){
 
        $tablaAlimentacion = TablaAlimentacion::first();
@@ -34,6 +41,9 @@ class PiscicultorController extends Controller
 
     }
 
+    /**
+     * Función para actualizar la tabla de alimentación
+     */
     public function tablaUpdate(Request $request, TablaAlimentacion $tablaAlimentacion){
 
         $request->validate([
@@ -48,6 +58,10 @@ class PiscicultorController extends Controller
 
     }
 
+
+    /**
+     * Función para editar la tabla de alimentación
+     */
     public function tablaEdit(TablaAlimentacion $tablaAlimentacion){
 
         return view("interfazPiscicultor.tablaAlimentacion.edit", compact('tablaAlimentacion'));
@@ -93,6 +107,10 @@ class PiscicultorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Función para editar el cultibo
+     */
     public function edit(Cultivo $Cultivo)
     {
         return view("interfazPiscicultor.parametros.edit", compact('Cultivo'));
@@ -105,6 +123,10 @@ class PiscicultorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     /**
+      * Función para actualizar los cultivos
+      */
     public function update(Request $request, Cultivo $Cultivo)
     {
         $request->validate([
